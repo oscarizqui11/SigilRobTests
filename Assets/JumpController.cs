@@ -8,6 +8,7 @@ public class JumpController : MonoBehaviour
 
     private Rigidbody _rb;
 
+    public bool Grounded { get { return grounded; } private set { grounded = value; } }
     private bool grounded;
 
     private void Start()

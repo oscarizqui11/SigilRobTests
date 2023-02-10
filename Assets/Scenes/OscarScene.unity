@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd248a7bd6c1b8d45971d8345ae3f773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camSensibility: 100
+  camHeight: 1
 --- !u!1 &488859688
 GameObject:
   m_ObjectHideFlags: 0

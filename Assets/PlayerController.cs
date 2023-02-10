@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
         _mb = GetComponent<MovementBehaviour>();   
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movDirVer = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized * Input.GetAxisRaw("Vertical");
         Vector3 movDirHor = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z).normalized * Input.GetAxisRaw("Horizontal");
