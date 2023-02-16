@@ -5,21 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Script_", menuName = "Scripting/Script")]
 public class Script : ScriptableObject
 {
-    private ScriptingActType _scriptingActType;
-    public enum ScriptingActType
-    {
-        talk,
-        moveCamera,
-        playAudio,
-        stopAudio,
-        wait
-    }
-
+    public int ArrayLeght;
     public Command[] commands;
     [System.Serializable]
-    public struct Command
+    public class Command
     {
-        public ScriptingActType id;
+        public enum ScriptingActType
+        {
+            talk,
+            moveCamera,
+            playAudio,
+            stopAudio,
+            wait
+        };
+        public ScriptingActType scriptingActType;
+
         public Conversation conver;
         public Vector3 varVector1;
         public Vector3 varVector2;
