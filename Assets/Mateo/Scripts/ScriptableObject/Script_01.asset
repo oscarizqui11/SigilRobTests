@@ -13,4 +13,11 @@ MonoBehaviour:
   m_Name: Script_01
   m_EditorClassIdentifier: 
   ArrayLeght: 0
-  commands: []
+  commands:
+  - scriptingActType: 0
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 0
+    varFloat2: 0
