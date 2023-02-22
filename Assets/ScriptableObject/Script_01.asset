@@ -12,8 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e355d4fef8df2488fd01dccb52f278, type: 3}
   m_Name: Script_01
   m_EditorClassIdentifier: 
-  ArrayLeght: 0
   commands:
+  - scriptingActType: 0
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 0
+    varFloat2: 0
+  - scriptingActType: 1
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 0
+    varFloat2: 0
   - scriptingActType: 0
     conver: {fileID: 0}
     varVector1: {x: 0, y: 0, z: 0}
