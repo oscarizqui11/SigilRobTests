@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Script_", menuName = "Scripting/Script")]
 public class Script : ScriptableObject
 {
-    public int ArrayLeght;
     public Command[] commands;
     [System.Serializable]
     public class Command
@@ -14,8 +13,10 @@ public class Script : ScriptableObject
         {
             talk,
             moveCamera,
-            playAudio,
-            stopAudio,
+            playMusic,
+            playSFX,
+            playVoice,
+            stopMusic,
             wait
         };
         public ScriptingActType scriptingActType;
