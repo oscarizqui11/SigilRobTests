@@ -49,9 +49,18 @@ Shader "Custom/Healthbars"
 
             float4 frag(Interpolators i) : SV_Target
             {
-                //float4 col = tex2D(_MainTex, i.uv);
+                float2 coords = i.uv;
+                coords.x *= 8;
+                float2 pointOnLineSeg = float2(clamp(coords.x, 0.5, 7.5), 0.5);
+                float sdf = distance(coords, pointOnLineSeg) * 2 - 1;
+                clip(-sdf);
+
+
+
+
 
                 float healthbarMask = _Health > i.uv.x;
+                
                 float3 healthbarColor = tex2D(_MainTex, float2(_Health, i.uv.y));
 
                 if(_Health < 0.2)
