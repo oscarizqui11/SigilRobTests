@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SRobEngine;
 
 public class CameraController : MonoBehaviour
 {
     private Camera _cam;
     private Transform _player;
+    [SerializeField] FixedCamera activeCamera;
 
     private bool isFirstPerson;
     private Vector3 fixedCamPosition;
@@ -29,20 +31,22 @@ public class CameraController : MonoBehaviour
         {
             ToggleFirstPerson();
         }
-        if(isFirstPerson)
+        else if(isFirstPerson)
         {
             if(_player.transform.position.x != _cam.transform.position.x &&
                 _player.transform.position.y != _cam.transform.position.y)
             {
                 ToggleFirstPerson();
             }
+            else
+            {
+                float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
+                xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
 
-            float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
-            xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
+                xRotation = Mathf.Clamp(xRotation, -80, 80);
 
-            xRotation = Mathf.Clamp(xRotation, -80, 80);
-
-            _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
+                _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
+            }
         }
     }
 
@@ -64,6 +68,11 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public bool GetIsFirstPerson()
+    {
+        return isFirstPerson;
+    }
+
     public void SetCameraPosition(Vector3 newPos)
     {
         _cam.transform.position = newPos;
@@ -75,4 +84,12 @@ public class CameraController : MonoBehaviour
         _cam.transform.rotation = newRotation;
         fixedCamRotation = newRotation;
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if(activeCamera)
+            activeCamera.PreviewCamera();
+    }
+#endif
 }
