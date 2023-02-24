@@ -11,7 +11,9 @@ public class RoomBotMovementScript : MonoBehaviour
 
     private Quaternion lookRotation;
     private Vector3 dir;
-    private int index = 0;
+    private int index;
+
+    public bool NotActive_ { private get; set; }
     #endregion
 
     #region Interpolation
@@ -27,36 +29,39 @@ public class RoomBotMovementScript : MonoBehaviour
 
     private void Update()
     {
-        if (!assignedPoint)
+        if (!NotActive_)
         {
-            pointA = transform.position;
-            pointB = pos[index];
+            if (!assignedPoint)
+            {
+                pointA = transform.position;
+                pointB = pos[index];
 
-            float dist = Vector3.Distance(pointA, pointB);
+                float dist = Vector3.Distance(pointA, pointB);
 
-            totalTime = dist / speed;
-            assignedPoint = true;
+                totalTime = dist / speed;
+                assignedPoint = true;
 
-            dir = (pointB - pointA).normalized;
-            lookRotation = Quaternion.LookRotation(dir);
-        }
+                dir = (pointB - pointA).normalized;
+                lookRotation = Quaternion.LookRotation(dir);
+            }
 
-        currentTime += Time.deltaTime;
-        factor = currentTime / totalTime;
+            currentTime += Time.deltaTime;
+            factor = currentTime / totalTime;
 
-        Vector3 valueIPos = pointA + (pointB - pointA) * factor;
-        transform.position = valueIPos;
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speedRotation);
+            Vector3 valueIPos = pointA + (pointB - pointA) * factor;
+            transform.position = valueIPos;
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speedRotation);
 
-        if (currentTime > totalTime)
-        {
-            currentTime = 0;
-            assignedPoint = false;
+            if (currentTime > totalTime)
+            {
+                currentTime = 0;
+                assignedPoint = false;
 
-            if (index < pos.Length - 1)
-                index++;
-            else
-                index = 0;
+                if (index < pos.Length - 1)
+                    index++;
+                else
+                    index = 0;
+            }
         }
     }
 }

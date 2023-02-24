@@ -7,6 +7,7 @@ public class LaserBehaviour : MonoBehaviour
     #region Parameters
     [SerializeField] private Vector3[] pos = new Vector3[2];
     [SerializeField] private float speed;
+    [SerializeField] private string mirrorLayer;
 
     public bool Active_ { private get; set; }
 
@@ -70,16 +71,35 @@ public class LaserBehaviour : MonoBehaviour
 
     private void Action()
     {
-        //if (Active_)
-        //{
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 25))
+        if (Physics.Raycast(ray, out hit, 25))
+        {
+            lr_.positionCount = 2;
+            lr_.SetPosition(0, transform.position);
+            lr_.SetPosition(1, hit.point);
+
+            ReflectLaser(hit, 1);
+        }
+    }
+
+    private void ReflectLaser(RaycastHit hit, int index)
+    {
+        if (LayerMask.LayerToName(hit.transform.gameObject.layer) == mirrorLayer)
+        {
+            var direction = Vector3.Reflect(transform.forward, hit.normal);
+            Ray ray_ = new Ray(hit.point, direction);
+            RaycastHit hit_;
+
+            if (Physics.Raycast(ray_, out hit_, 25))
             {
-                lr_.SetPosition(0, transform.position);
-                lr_.SetPosition(1, hit.point);
+                index++;
+                lr_.positionCount++;
+                lr_.SetPosition(index, hit_.point);
+                
+                ReflectLaser(hit_, index); 
             }
-        //}
+        }
     }
 }
