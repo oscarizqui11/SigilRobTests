@@ -11,8 +11,8 @@ public class JumpController : MonoBehaviour
     public bool Grounded { get { return grounded; } private set { grounded = value; } }
     private bool grounded;
 
-    [SerializeField] private string groundLayer;
-    [SerializeField] private string enemyLayer;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask enemyLayer;
 
     private void Start()
     {
@@ -25,31 +25,34 @@ public class JumpController : MonoBehaviour
     {
         if(grounded && Input.GetButtonDown("Jump"))
             _rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        Collider[] other = Physics.OverlapBox(gameObject.transform.position, transform.localScale, Quaternion.identity, enemyLayer, QueryTriggerInteraction.Collide);
+
+        int i = 0;
+
+        while (i < other.Length)
+        {
+            if (other[i].gameObject.layer == enemyLayer)
+                other[i].GetComponent<RoomBotBehaviourScript>().NotActive_ = true;
+
+            i++;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(LayerMask.LayerToName(collision.gameObject.layer) == groundLayer)
+        if(collision.gameObject.layer == groundLayer)
             grounded = true;
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (LayerMask.LayerToName(collision.gameObject.layer) == groundLayer)
+        if (collision.gameObject.layer == groundLayer)
             grounded = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (LayerMask.LayerToName(other.gameObject.layer) == enemyLayer)
-        {
-            grounded = true;
-            other.GetComponent<RoomBotMovementScript>().NotActive_ = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer) == groundLayer)
+        if (other.gameObject.layer == enemyLayer)
             grounded = false;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomBotMovementScript : MonoBehaviour
+public class RoomBotBehaviourScript : MonoBehaviour
 {
     #region Parameters
     [SerializeField] private Vector3[] pos;
@@ -28,6 +28,12 @@ public class RoomBotMovementScript : MonoBehaviour
     #endregion
 
     private void Update()
+    {
+        Movement();
+        Action();
+    }
+
+    private void Movement()
     {
         if (!NotActive_)
         {
@@ -63,5 +69,10 @@ public class RoomBotMovementScript : MonoBehaviour
                     index = 0;
             }
         }
+    }
+
+    private void Action()
+    {
+        
     }
 }
