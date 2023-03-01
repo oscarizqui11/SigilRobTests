@@ -25,18 +25,6 @@ public class JumpController : MonoBehaviour
     {
         if(grounded && Input.GetButtonDown("Jump"))
             _rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-        Collider[] other = Physics.OverlapBox(gameObject.transform.position, transform.localScale, Quaternion.identity, enemyLayer, QueryTriggerInteraction.Collide);
-
-        int i = 0;
-
-        while (i < other.Length)
-        {
-            if (other[i].gameObject.layer == enemyLayer)
-                other[i].GetComponent<RoomBotBehaviourScript>().NotActive_ = true;
-
-            i++;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -47,12 +35,6 @@ public class JumpController : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == groundLayer)
-            grounded = false;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == enemyLayer)
             grounded = false;
     }
 }

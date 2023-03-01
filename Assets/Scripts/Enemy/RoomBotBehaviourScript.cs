@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomBotBehaviourScript : MonoBehaviour
 {
     #region Parameters
+    [Header("Route Parameters")]
     [SerializeField] private Vector3[] pos;
     [SerializeField] private float speed;
     [SerializeField] private float speedRotation;
@@ -13,7 +14,19 @@ public class RoomBotBehaviourScript : MonoBehaviour
     private Vector3 dir;
     private int index;
 
-    public bool NotActive_ { private get; set; }
+    [Header("Box Parameters")]
+    [SerializeField] private Vector3 boxLocation;
+    [SerializeField] private Vector3 boxSize;
+    [SerializeField] private LayerMask playerMask;
+
+    private Rigidbody rb_;
+    private bool isCollinding;
+
+    [Header("Reactivated Parameters")]
+    [SerializeField] private float cooldownMax;
+
+    private float cooldown;
+    private bool NotActive_;
     #endregion
 
     #region Interpolation
@@ -27,10 +40,16 @@ public class RoomBotBehaviourScript : MonoBehaviour
     private Vector3 pointB;
     #endregion
 
+    private void Start()
+    {
+        rb_ = GetComponent<Rigidbody>();
+        cooldown = cooldownMax;
+    }
+
     private void Update()
     {
-        Movement();
         Action();
+        Movement();
     }
 
     private void Movement()
@@ -73,6 +92,46 @@ public class RoomBotBehaviourScript : MonoBehaviour
 
     private void Action()
     {
-        
+        Collider[] colliders = Physics.OverlapBox(
+                                        new Vector3(transform.position.x + boxLocation.x, transform.position.y + boxLocation.y, transform.position.z + boxLocation.z),
+                                            new Vector3(transform.localScale.x * boxSize.x, transform.localScale.y * boxSize.y, transform.localScale.z * boxSize.z) / 2,
+                                                Quaternion.identity,
+                                                    playerMask);
+
+        if (0 < colliders.Length)
+        {
+            if(!isCollinding)
+            {
+                if (!NotActive_)
+                    NotActive_ = true;
+                else
+                {
+                    NotActive_ = false;
+                    cooldown = cooldownMax;
+                }
+            }
+
+            isCollinding = true;
+        }
+        else
+            isCollinding = false;
+
+        if (NotActive_)
+        {
+            cooldown -= Time.deltaTime;
+
+            if (cooldown <= 0)
+            {
+                NotActive_ = false;
+                cooldown = cooldownMax;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(
+                new Vector3(transform.position.x + boxLocation.x, transform.position.y + boxLocation.y, transform.position.z + boxLocation.z),
+                    new Vector3(transform.localScale.x * boxSize.x, transform.localScale.y * boxSize.y, transform.localScale.z * boxSize.z));
     }
 }
