@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 1487676631}
   - component: {fileID: 1487676632}
   m_Layer: 8
-  m_Name: Point Light
+  m_Name: RoomBotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,6 +2656,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cooldownMax: 5
+  light_: {fileID: 1487676632}
 --- !u!54 &1894471496
 Rigidbody:
   m_ObjectHideFlags: 0

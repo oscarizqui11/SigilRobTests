@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomBotBehaviourScript : MonoBehaviour
 {
     #region Parameters
-    [Header("Route Parameters")]
+    [Header("Movement Parameters")]
     [SerializeField] private Vector3[] pos;
     [SerializeField] private float speed;
     [SerializeField] private float speedRotation;
@@ -14,7 +14,7 @@ public class RoomBotBehaviourScript : MonoBehaviour
     private Vector3 dir;
     private int index;
 
-    [Header("Box Parameters")]
+    [Header("Collision Parameters")]
     [SerializeField] private Vector3 boxLocation;
     [SerializeField] private Vector3 boxSize;
     [SerializeField] private LayerMask playerMask;
@@ -24,9 +24,11 @@ public class RoomBotBehaviourScript : MonoBehaviour
 
     [Header("Reactivated Parameters")]
     [SerializeField] private float cooldownMax;
+    [SerializeField] private Light light_;
 
     private float cooldown;
-    private bool NotActive_;
+    private float timer;
+    public bool NotActive_ { private set; get; }
     #endregion
 
     #region Interpolation
@@ -98,16 +100,48 @@ public class RoomBotBehaviourScript : MonoBehaviour
                                                 Quaternion.identity,
                                                     playerMask);
 
+        ExtraAction(colliders);
+
+        if (NotActive_)
+        {
+            cooldown -= Time.deltaTime;
+
+            if (timer > 0)
+                timer -= Time.deltaTime;
+            else
+            {
+                light_.enabled = !light_.enabled;
+                timer = cooldown / 8;
+            }
+
+            if (cooldown <= 0)
+            {
+                NotActive_ = false;
+                cooldown = cooldownMax;
+                light_.enabled = true;
+                light_.color = Color.red;
+            }
+        }
+    }
+
+    private void ExtraAction(Collider[] colliders)
+    {
         if (0 < colliders.Length)
         {
-            if(!isCollinding)
+            if (!isCollinding)
             {
                 if (!NotActive_)
+                {
                     NotActive_ = true;
+                    timer = cooldownMax / 8;
+                    light_.color = new Color(1.0f, 0.5f, 0.0f);
+                }
                 else
                 {
                     NotActive_ = false;
                     cooldown = cooldownMax;
+                    light_.enabled = true;
+                    light_.color = Color.red;
                 }
             }
 
@@ -115,17 +149,6 @@ public class RoomBotBehaviourScript : MonoBehaviour
         }
         else
             isCollinding = false;
-
-        if (NotActive_)
-        {
-            cooldown -= Time.deltaTime;
-
-            if (cooldown <= 0)
-            {
-                NotActive_ = false;
-                cooldown = cooldownMax;
-            }
-        }
     }
 
     private void OnDrawGizmos()
