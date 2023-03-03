@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] float camSensibility = 100;
     [SerializeField] float camHeight;
 
+    public MeshRenderer[] meshesToDisabel;
+
     void Start()
     {
         _cam = GetComponent<Camera>();
@@ -25,7 +27,7 @@ public class CameraController : MonoBehaviour
         fixedCamRotation = _cam.transform.rotation;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetButtonDown("FirstPerson") && _player.GetComponent<JumpController>().Grounded)
         {
@@ -38,7 +40,7 @@ public class CameraController : MonoBehaviour
             {
                 ToggleFirstPerson();
             }
-            else
+            /*else
             {
                 float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
                 xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
@@ -46,15 +48,35 @@ public class CameraController : MonoBehaviour
                 xRotation = Mathf.Clamp(xRotation, -80, 80);
 
                 _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
-            }
+            }*/
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(isFirstPerson)
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
+            xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
+
+            xRotation = Mathf.Clamp(xRotation, -80, 80);
+
+            _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
         }
     }
 
     private void ToggleFirstPerson()
     {
+        Debug.Log("Primera Persona Cambiada");
+
         isFirstPerson = !isFirstPerson;
+
+        for(int i = 0; i < meshesToDisabel.Length; i++)
+        {
+            meshesToDisabel[i].enabled = !isFirstPerson;
+        }
         
-        _player.GetComponent<MeshRenderer>().enabled = !isFirstPerson;
+        //_player.GetComponent<MeshRenderer>().enabled = !isFirstPerson;
 
         if(isFirstPerson)
         {
