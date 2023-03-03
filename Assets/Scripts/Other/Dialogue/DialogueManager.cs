@@ -25,7 +25,8 @@ public class DialogueManager : MonoBehaviour
             _dialogueManager = this;
             _anim = GetComponent<Animator>();
         }
-        else Destroy(this);
+        else
+            Destroy(this);
     }
 
     public void StartConversation(Conversation conver)
