@@ -31,7 +31,7 @@ public class JumpController : MonoBehaviour
     {
         if(grounded && Input.GetButtonDown("Jump"))
         {
-            if(!Camera.main.GetComponentInChildren<CameraController>().GetIsFirstPerson())
+            //if(!Camera.main.GetComponentInChildren<CameraController>().GetIsFirstPerson())
                 _rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
     }

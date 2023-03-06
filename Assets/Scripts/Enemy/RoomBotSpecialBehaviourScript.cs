@@ -99,10 +99,11 @@ public class RoomBotSpecialBehaviourScript : EnemyBehaviourScript
                     NotActive_ = true;
                     light_.color = color_;
                 }
+
+                colliders[0].gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounce, ForceMode.Impulse);
             }
 
             isCollinding = true;
-            colliders[0].gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounce, ForceMode.Impulse);
         }
         else
             isCollinding = false;

@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 349534905}
   - component: {fileID: 349534904}
   - component: {fileID: 349534903}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Pared_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 381033429}
   - component: {fileID: 381033428}
   - component: {fileID: 381033427}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 444827494}
   - component: {fileID: 444827493}
   - component: {fileID: 444827492}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,8 +1240,8 @@ GameObject:
   - component: {fileID: 817701341}
   - component: {fileID: 817701340}
   - component: {fileID: 817701339}
-  - component: {fileID: 817701346}
   - component: {fileID: 817701345}
+  - component: {fileID: 817701346}
   - component: {fileID: 817701344}
   - component: {fileID: 817701343}
   - component: {fileID: 817701342}
@@ -1331,12 +1331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 65536
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  stepHeight: 0
+  grounded: 0
 --- !u!114 &817701343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875704336048f8a46939e94a516d5815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputChangeDif: 0
 --- !u!54 &817701345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1378,18 +1375,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &817701346
-BoxCollider:
+--- !u!136 &817701346
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817701337}
-  m_Material: {fileID: 13400000, guid: 815e748fa616a6446bbcd95a1d65b415, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.6
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &894123931
 GameObject:
@@ -1403,7 +1401,7 @@ GameObject:
   - component: {fileID: 894123934}
   - component: {fileID: 894123933}
   - component: {fileID: 894123932}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Mirror (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1703,7 @@ GameObject:
   - component: {fileID: 950503098}
   - component: {fileID: 950503097}
   - component: {fileID: 950503096}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Pared_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339550281}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2884,7 +2882,7 @@ MonoBehaviour:
   cooldownMax: 5
   light_: {fileID: 1487676632}
   color_: {r: 1, g: 0.5372549, b: 0, a: 0}
-  bounce: 1.25
+  bounce: 8
 --- !u!1 &1928263485
 GameObject:
   m_ObjectHideFlags: 0
