@@ -11,17 +11,17 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - Player
   - 
+  - Enemy
   - 
+  - EnemyTrigger
   - 
+  - Traps
   - 
+  - Mirror
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - World
   - 
   - 
   - 
