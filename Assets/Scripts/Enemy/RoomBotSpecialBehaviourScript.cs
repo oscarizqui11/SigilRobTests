@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomBotBehaviourScript : EnemyBehaviourScript
+public class RoomBotSpecialBehaviourScript : EnemyBehaviourScript
 {
+    [SerializeField] private float bounce;
+
     private void Start()
     {
         rb_ = GetComponent<Rigidbody>();
@@ -95,19 +97,12 @@ public class RoomBotBehaviourScript : EnemyBehaviourScript
                 if (!NotActive_)
                 {
                     NotActive_ = true;
-                    timer = cooldownMax / 8;
                     light_.color = color_;
-                }
-                else
-                {
-                    NotActive_ = false;
-                    cooldown = cooldownMax;
-                    light_.enabled = true;
-                    light_.color = Color.red;
                 }
             }
 
             isCollinding = true;
+            colliders[0].gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounce, ForceMode.Impulse);
         }
         else
             isCollinding = false;
