@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 3
-  stepHeight: 0
+  stepHeight: 0.5
   grounded: 0
 --- !u!114 &817701343
 MonoBehaviour:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875704336048f8a46939e94a516d5815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputChangeDif: 0
+  inputChangeDif: 0.5
 --- !u!54 &817701345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2222,6 +2222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339550281}
+  - component: {fileID: 1339550282}
   m_Layer: 16
   m_Name: World
   m_TagString: Untagged
@@ -2249,6 +2250,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339550282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339550280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7c61a71ae6ec74cb64f2c3f63df015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 11400000, guid: b28ee0353af85234c88275c79ce76182, type: 2}
+  ActiveObject: 0
+  hasReceivedEvent: 1
+  gameState: 0
 --- !u!1 &1487676630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,7 +2747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1894471490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2805,7 +2822,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894471489}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8240f691ba2e2e42a0a3040e27553ed, type: 3}
   m_Name: 
@@ -2824,7 +2841,7 @@ MonoBehaviour:
     m_Bits: 64
   cooldownMax: 5
   light_: {fileID: 1487676632}
-  color_: {r: 0, g: 0, b: 0, a: 0}
+  color_: {r: 1, g: 0.5372549, b: 0, a: 0}
 --- !u!54 &1894471496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2862,7 +2879,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894471489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57dfe8eb83bac1244b55fa9c83e6cff7, type: 3}
   m_Name: 
@@ -2882,7 +2899,7 @@ MonoBehaviour:
   cooldownMax: 5
   light_: {fileID: 1487676632}
   color_: {r: 1, g: 0.5372549, b: 0, a: 0}
-  bounce: 8
+  bounce: 4
 --- !u!1 &1928263485
 GameObject:
   m_ObjectHideFlags: 0
