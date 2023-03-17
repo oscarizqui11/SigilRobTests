@@ -10,6 +10,5 @@ namespace FSM
     {
         public Decision decision;
         public State trueState;
-        public State falseState;
     }
 }

@@ -7,6 +7,14 @@ public class GameManager : Controller
 {
     public static GameManager _gameManager { get; private set; }
 
+    [System.Serializable]
+    public struct Controllers 
+    { 
+        public int GameState;
+        public Controller controller;
+    }
+    public Controllers[] controllers;
+
     //Events
     [HideInInspector] public bool hasReceivedEvent = true;
     [HideInInspector] public Event receivedEvent;
@@ -23,6 +31,9 @@ public class GameManager : Controller
 
     public override void Start()
     {
+        for (int i = 0; i < controllers.Length; i++)
+            controllers[i].controller.enabled = false;
+
         base.Start();
     }
 

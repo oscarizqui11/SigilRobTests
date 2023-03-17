@@ -1245,6 +1245,7 @@ GameObject:
   - component: {fileID: 817701344}
   - component: {fileID: 817701343}
   - component: {fileID: 817701342}
+  - component: {fileID: 817701347}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1389,6 +1390,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &817701347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817701337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d5f6a65c3d2c4ab2a01e63e56075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 0
+  dashCd: 0
+  dashDuration: 0
+  jumpForce: 4
 --- !u!1 &894123931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,8 +2279,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7c61a71ae6ec74cb64f2c3f63df015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: b28ee0353af85234c88275c79ce76182, type: 2}
+  currentState: {fileID: 11400000, guid: 7add65379d3ff7f46b5b8806c1dccce7, type: 2}
   ActiveObject: 0
+  controllers:
+  - GameState: 0
+    controller: {fileID: 0}
+  - GameState: 1
+    controller: {fileID: 0}
   hasReceivedEvent: 1
   gameState: 0
 --- !u!1 &1487676630

@@ -25,6 +25,8 @@ namespace FSM
         }
 
         public void Transition(State nextState)
-        { currentState = nextState; }
+        { 
+            currentState = nextState;
+        }
     }
 }

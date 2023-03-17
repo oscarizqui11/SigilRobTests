@@ -44,8 +44,6 @@ namespace FSM
                     controller.Transition(transitions[i].trueState);
                     return;
                 }
-                else
-                    controller.Transition(transitions[i].falseState);
             }
         }
     }

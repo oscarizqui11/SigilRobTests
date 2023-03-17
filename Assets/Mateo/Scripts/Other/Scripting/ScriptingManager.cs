@@ -16,7 +16,7 @@ public abstract class ScriptingManager : Action
 
     public override void Innit(Controller controller)
     {
-        _gameManager = (GameManager)controller;
+        //_gameManager = (GameManager)controller;
     }
 
     public override void Act(Controller controller)
