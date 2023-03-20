@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
-[CreateAssetMenu(menuName = "FSM/Action/ScriptingManager")]
+[CreateAssetMenu(menuName = "FSM/GameManager/Action/ScriptingManager")]
 public abstract class ScriptingManager : Action
 {
     public Script _script { private get; set; }

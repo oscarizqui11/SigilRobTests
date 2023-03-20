@@ -1243,8 +1243,6 @@ GameObject:
   - component: {fileID: 817701345}
   - component: {fileID: 817701346}
   - component: {fileID: 817701344}
-  - component: {fileID: 817701343}
-  - component: {fileID: 817701342}
   - component: {fileID: 817701347}
   m_Layer: 6
   m_Name: Player
@@ -1319,34 +1317,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &817701342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817701337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b074968f7b1aae488ef29548563974d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 3
-  stepHeight: 0.5
-  grounded: 0
---- !u!114 &817701343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817701337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1a9c81e956dfc45b1dd5b36778e75d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 2
 --- !u!114 &817701344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,7 +1329,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875704336048f8a46939e94a516d5815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
+  allStates:
+  - {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
+  - {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
+  ActiveObject: 0
   inputChangeDif: 0.5
+  playerState: 0
+  hasReceivedEvent: 1
 --- !u!54 &817701345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1399,13 +1376,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 817701337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 305d5f6a65c3d2c4ab2a01e63e56075e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b788d03af573b44798e5b8f990663f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 0
-  dashCd: 0
-  dashDuration: 0
-  jumpForce: 4
+  stepHeight: 0.5
 --- !u!1 &894123931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,18 +2248,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339550280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b7c61a71ae6ec74cb64f2c3f63df015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 7add65379d3ff7f46b5b8806c1dccce7, type: 2}
+  allStates: []
   ActiveObject: 0
-  controllers:
-  - GameState: 0
-    controller: {fileID: 0}
-  - GameState: 1
-    controller: {fileID: 0}
+  controllers: []
   hasReceivedEvent: 1
   gameState: 0
 --- !u!1 &1487676630

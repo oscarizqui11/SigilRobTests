@@ -1,39 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
-    private MovementBehaviour _mb;
-    
-    private Vector3 movDir;
-    private Vector2 inputDir;
+    public static PlayerController _playerController { get; private set; }
+    public Rigidbody _rb { get; private set; }
+    public CapsuleCollider _capscol { get; private set; }
 
     [Range(0,1)]
-    [SerializeField] float inputChangeDif;
+    public float inputChangeDif;
 
-
-    private void Start()
+    public enum PlayerState
     {
-        _mb = GetComponent<MovementBehaviour>();
+        Grounded,
+        Airborne,
+        Ramming,
+        Shooting,
+        Holding,
+        Healing
+    };
+    [HideInInspector] public PlayerState playerState;
+
+    //Events
+    [HideInInspector] public bool hasReceivedEvent = true;
+    [HideInInspector] public Event receivedEvent;
+
+    private void Awake()
+    {
+        if (_playerController != null && _playerController != this)
+            Destroy(this);
+        else
+            _playerController = this;
     }
 
-    void FixedUpdate()
+    public override void Start()
     {
-        if(Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > inputChangeDif)
-        {
-            inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _rb = GetComponent<Rigidbody>();
+        _capscol = GetComponent<CapsuleCollider>();
 
-            Vector3 movDirHor = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z).normalized * inputDir.x;
-            Vector3 movDirVer = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized * inputDir.y;
+        base.Start();
+    }
 
-            movDir = movDirVer + movDirHor;
-        }
-
-        if(movDir.magnitude > 0 + inputChangeDif)
-        {
-            _mb.MoveRB(movDir.normalized * movDir.normalized.magnitude);
-            transform.rotation = Quaternion.LookRotation(movDir, transform.up);
-        }
+    public override void Update()
+    {
+        base.Update();
     }
 }
