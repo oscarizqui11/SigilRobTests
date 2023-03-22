@@ -15,10 +15,10 @@ public class DecChangeGameState : Decision
         if (_gameManager.gameState == gameState)
         {
             for (int i = 0; i < _gameManager.controllers.Length; i++)
-                if (_gameManager.controllers[i].GameState == gameState)
-                    _gameManager.controllers[i].controller.enabled = true;
+                if (_gameManager.GameState[i] == gameState)
+                    _gameManager.controllers[i].enabled = true;
                 else
-                    _gameManager.controllers[i].controller.enabled = false;
+                    _gameManager.controllers[i].enabled = false;
 
             return true;
         }
