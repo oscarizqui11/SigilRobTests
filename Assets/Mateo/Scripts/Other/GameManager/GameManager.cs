@@ -28,9 +28,6 @@ public class GameManager : Controller
     {
         controllers = FindObjectsOfType<Controller>();
 
-        for (int i = 0; i < controllers.Length; i++)
-            controllers[i].enabled = false;
-
         base.Start();
     }
 
