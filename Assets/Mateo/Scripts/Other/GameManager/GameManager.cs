@@ -7,8 +7,8 @@ public class GameManager : Controller
 {
     public static GameManager _gameManager { get; private set; }
 
-    [SerializeField] public int[] GameState;
-    [SerializeField] private Controller[] controllers;
+    public int[] GameState;
+    public Controller[] controllers;
 
     //Events
     [HideInInspector] public bool hasReceivedEvent = true;
