@@ -9,11 +9,13 @@ public class RecolectableTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Pulsa E para recojer");
+        //Aplicar shader
         colectable = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        //Desaplicar shader
         colectable = false;
     }
 
