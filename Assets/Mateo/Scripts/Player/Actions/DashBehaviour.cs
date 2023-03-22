@@ -10,7 +10,6 @@ public class DashBehaviour : Action
     [SerializeField] private float dashCd;
     [SerializeField] private float dashDuration;
 
-    private bool DashUsed;
     private float DashCdTimer;
 
     private PlayerController playerController;
@@ -22,14 +21,19 @@ public class DashBehaviour : Action
 
     public override void Act(Controller controller)
     {
-        if (DashCdTimer > 0)
-            return;
-        else
-            DashCdTimer = dashCd;
-
-        if (Input.GetMouseButton(1) && !DashUsed)
+        if (Input.GetMouseButtonDown(1))
         {
+            if (DashCdTimer > 0)
+                return;
+            else
+                DashCdTimer = dashCd;
 
+            Vector3 forceToApply = playerController.transform.forward * dashForce;
+
+            playerController._rb.AddForce(forceToApply, ForceMode.Impulse);
         }
+
+        if (DashCdTimer > 0)
+            DashCdTimer -= Time.deltaTime;
     }
 }
