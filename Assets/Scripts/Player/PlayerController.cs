@@ -30,10 +30,15 @@ public class PlayerController : MonoBehaviour
             movDir = movDirVer + movDirHor;
         }
 
-        if(movDir.magnitude > 0 + inputChangeDif)
+        if(IsMoving())
         {
             _mb.MoveRB(movDir.normalized * movDir.normalized.magnitude);
             transform.rotation = Quaternion.LookRotation(movDir, transform.up);
         }
+    }
+
+    public bool IsMoving()
+    {
+        return movDir.magnitude > 0 + inputChangeDif;
     }
 }

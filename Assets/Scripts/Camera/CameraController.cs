@@ -35,33 +35,22 @@ public class CameraController : MonoBehaviour
         }
         else if(isFirstPerson)
         {
-            if(_player.transform.position.x != _cam.transform.position.x &&
-                _player.transform.position.y != _cam.transform.position.y)
+            if (Mathf.Abs(_player.transform.position.x - _cam.transform.position.x) > 0.5f ||
+                Mathf.Abs(_player.transform.position.z - _cam.transform.position.z) > 0.5f)
             {
                 ToggleFirstPerson();
             }
-            /*else
+            else
             {
-                float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
-                xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
+                float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.deltaTime;
+                xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.deltaTime;
 
                 xRotation = Mathf.Clamp(xRotation, -80, 80);
 
                 _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
-            }*/
-        }
-    }
+                _player.transform.Rotate(0, mouseX, 0);
+            }
 
-    private void FixedUpdate()
-    {
-        if(isFirstPerson)
-        {
-            float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.fixedDeltaTime;
-            xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.fixedDeltaTime;
-
-            xRotation = Mathf.Clamp(xRotation, -80, 80);
-
-            _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
         }
     }
 
@@ -75,8 +64,6 @@ public class CameraController : MonoBehaviour
         {
             meshesToDisabel[i].enabled = !isFirstPerson;
         }
-        
-        //_player.GetComponent<MeshRenderer>().enabled = !isFirstPerson;
 
         if(isFirstPerson)
         {

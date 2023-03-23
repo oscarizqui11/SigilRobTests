@@ -57,8 +57,8 @@ public class JumpController : MonoBehaviour
             
             if(point.point.y <= StepPointY())
             {
-                Debug.Log(collision.collider.bounds.max.y);
-                Debug.Log("Caida!");
+                //Debug.Log(collision.collider.bounds.max.y);
+                //Debug.Log("Caida!");
                 grounded = true;
             }
         }
@@ -72,9 +72,9 @@ public class JumpController : MonoBehaviour
         //if (collision.collider.bounds.ClosestPoint(transform.position + _capscol.center - new Vector3(0, _capscol.height / 2 + _capscol.radius / 2, 0)).y < transform.position.y + _capscol.center.y - _capscol.height / 2 + _capscol.radius / 2)
         if (transform.position.y + _capscol.center.y - _capscol.height / 2 + _capscol.radius * stepHeight - collision.collider.bounds.ClosestPoint(transform.position + _capscol.center - new Vector3(0, _capscol.height / 2 + _capscol.radius * stepHeight, 0)).y > 0.05f)
         {
-            Debug.Log(collision.gameObject.name + ", " + collision.collider.bounds.ClosestPoint(transform.position + _capscol.center - new Vector3(0, _capscol.height / 2 + _capscol.radius / 2, 0)).y);
-            Debug.Log(transform.position.y + _capscol.center.y - _capscol.height / 2 + _capscol.radius * stepHeight);
-            Debug.Log("Salto!");
+            //Debug.Log(collision.gameObject.name + ", " + collision.collider.bounds.ClosestPoint(transform.position + _capscol.center - new Vector3(0, _capscol.height / 2 + _capscol.radius / 2, 0)).y);
+            //Debug.Log(transform.position.y + _capscol.center.y - _capscol.height / 2 + _capscol.radius * stepHeight);
+            //Debug.Log("Salto!");
             grounded = false;
         }
     }

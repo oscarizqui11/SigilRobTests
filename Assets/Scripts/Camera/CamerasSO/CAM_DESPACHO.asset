@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a27fdd9ba7678f409b07aeec4d1b2de, type: 3}
-  m_Name: CAM_01
+  m_Name: CAM_DESPACHO
   m_EditorClassIdentifier: 
-  position: {x: -6.688, y: 5.95, z: -10}
-  rotation: {x: 23.451696, y: 33.026093, z: 359.5048}
-  pointSize: 10
-  color: {r: 1, g: 0.014428437, b: 0, a: 1}
+  position: {x: -2.8279285, y: 7.523818, z: -4.4934225}
+  rotation: {x: 42.606106, y: 124.74277, z: 0.015144687}
+  pointSize: 0.2
+  color: {r: 0, g: 0.14471078, b: 1, a: 1}
   preview: 0

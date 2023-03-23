@@ -42,5 +42,16 @@ namespace SRobEngine
             Gizmos.matrix = Matrix4x4.identity;
         }
 #endif
+
+        public Vector3 GetPosition()
+        {
+            return position;
+        }
+
+        public Vector3 GetEulerRotation()
+        {
+            return rotation;
+        }
+
     }
 }

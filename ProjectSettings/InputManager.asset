@@ -42,7 +42,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left ctrl
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: mouse 0
     gravity: 1000
@@ -325,3 +325,4 @@ InputManager:
     type: 2
     axis: 4
     joyNum: 1
+  m_UsePhysicalKeys: 1
