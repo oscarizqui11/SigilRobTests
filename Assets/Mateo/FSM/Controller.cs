@@ -6,8 +6,8 @@ namespace FSM
 {
     public class Controller : MonoBehaviour
     {
+        [Header("FSM")]
         public State currentState;
-
         public State[] allStates;
 
         public bool ActiveObject;

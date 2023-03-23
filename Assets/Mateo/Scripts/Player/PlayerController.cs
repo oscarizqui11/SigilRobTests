@@ -21,7 +21,6 @@ public class PlayerController : Controller
     {
         Grounded,
         Airborne,
-        Ramming,
         Shooting,
         Holding,
         Healing

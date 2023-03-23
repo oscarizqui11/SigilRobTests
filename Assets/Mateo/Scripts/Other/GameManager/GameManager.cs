@@ -8,7 +8,7 @@ public class GameManager : Controller
     public static GameManager _gameManager { get; private set; }
 
     public int[] GameState;
-    public Controller[] controllers;
+    public List<Controller> controllers = new List<Controller>();
 
     //Events
     [HideInInspector] public bool hasReceivedEvent = true;
@@ -26,7 +26,13 @@ public class GameManager : Controller
 
     public override void Start()
     {
-        controllers = FindObjectsOfType<Controller>();
+        Controller[] tempContrlls = FindObjectsOfType<Controller>();
+
+        for (int i = 0; i < tempContrlls.Length; i++)
+        {
+            if (tempContrlls[i] != this)
+                controllers.Add(tempContrlls[i]);
+        }
 
         base.Start();
     }

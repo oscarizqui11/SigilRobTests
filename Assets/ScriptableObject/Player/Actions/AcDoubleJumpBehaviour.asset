@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: AcDoubleJumpBehaviour
   m_EditorClassIdentifier: 
   jumpForce: 3
+  batterySubstraction: 20

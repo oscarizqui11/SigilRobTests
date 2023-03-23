@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025b1fe59687dc47b8d3651bdf7869e, type: 3}
-  m_Name: AcHealthBehaviour
+  m_Script: {fileID: 11500000, guid: af61f7f05de087848bb36aa50cd20ead, type: 3}
+  m_Name: ActiveState
   m_EditorClassIdentifier: 
-  maxBattery: 100
-  healDuration: 1
-  rechargeDuration: 3
-  substractVelocity: 10
-  autoSubstractVelocity: 20
-  curation: 0
-  autoConsum: 0
+  actions: []
+  transitions: []

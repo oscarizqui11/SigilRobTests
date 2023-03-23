@@ -11,14 +11,14 @@ public class DecChangeGameState : Decision
     public override bool Decide(Controller controller)
     {
         GameManager _gameManager = (GameManager)controller;
-
+        
         if (_gameManager.gameState == gameState)
         {
-            for (int i = 0; i < _gameManager.controllers.Length; i++)
+            for (int i = 0; i < _gameManager.controllers.Count; i++)
                 if (_gameManager.GameState[i] == gameState)
-                    _gameManager.controllers[i].enabled = true;
+                    _gameManager.controllers[i].ActiveObject = true;
                 else
-                    _gameManager.controllers[i].enabled = false;
+                    _gameManager.controllers[i].ActiveObject = false;
 
             return true;
         }
