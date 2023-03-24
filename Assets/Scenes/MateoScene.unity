@@ -3008,6 +3008,7 @@ GameObject:
   - component: {fileID: 1894471491}
   - component: {fileID: 1894471490}
   - component: {fileID: 1894471497}
+  - component: {fileID: 1894471499}
   - component: {fileID: 1894471498}
   m_Layer: 8
   m_Name: Roombot
@@ -3104,16 +3105,46 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894471489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab9a25fe7d67964f9a15273a42440bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 57dfe8eb83bac1244b55fa9c83e6cff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
-  allStates: []
-  ActiveObject: 0
-  NotActive_: 0
-  hasReceivedEvent: 1
+  pos: []
+  speed: 0
+  speedRotation: 0
+  boxLocation: {x: 0, y: 0, z: 0}
+  boxSize: {x: 0, y: 0, z: 0}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  cooldownMax: 0
+  light_: {fileID: 0}
+  color_: {r: 0, g: 0, b: 0, a: 0}
+  bounce: 0
+--- !u!114 &1894471499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894471489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8240f691ba2e2e42a0a3040e27553ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: []
+  speed: 0
+  speedRotation: 0
+  boxLocation: {x: 0, y: 0, z: 0}
+  boxSize: {x: 0, y: 0, z: 0}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  cooldownMax: 0
+  light_: {fileID: 0}
+  color_: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1928263485
 GameObject:
   m_ObjectHideFlags: 0

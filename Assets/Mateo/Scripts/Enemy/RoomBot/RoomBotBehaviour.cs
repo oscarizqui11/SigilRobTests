@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "FSM/Roombot/Action/RoomBotBehaviourScript", fileName = "AcRoomBotBehaviourScript")]
-public class RoomBotBehaviourScript : RoomBotActionBehaviour
+public class RoomBotBehaviour : RoomBotController
 {
-    public override void ExtraAction(Collider[] colliders, RoomBotController roomBotController)
+    public override void ExtraAction(Collider[] colliders)
     {
         if (0 < colliders.Length)
         {
             if (!isCollinding)
             {
-                if (!roomBotController.NotActive_)
+                if (!NotActive_)
                 {
-                    roomBotController.NotActive_ = true;
+                    NotActive_ = true;
                     timer = cooldownMax / 8;
                     light_.color = color_;
                 }
                 else
                 {
-                    roomBotController.NotActive_ = false;
+                    NotActive_ = false;
                     cooldown = cooldownMax;
                     light_.enabled = true;
                     light_.color = Color.red;

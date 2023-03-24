@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "FSM/Roombot/Action/RoomBotSpecialBehaviourScript", fileName = "AcRoomBotSpecialBehaviourScript")]
-public class RoomBotSpecialBehaviourScript : RoomBotActionBehaviour
+public class RoomBotSpecialBehaviour : RoomBotController
 {
     [SerializeField] private float bounce;
 
-    public override void ExtraAction(Collider[] colliders, RoomBotController roomBotController)
+    public override void ExtraAction(Collider[] colliders)
     {
         if (0 < colliders.Length)
         {
             if (!isCollinding)
             {
-                if (!roomBotController.NotActive_)
+                if (!NotActive_)
                 {
-                    roomBotController.NotActive_ = true;
+                    NotActive_ = true;
                     light_.color = color_;
                 }
 
