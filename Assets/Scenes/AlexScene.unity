@@ -532,7 +532,6 @@ GameObject:
   - component: {fileID: 286739388}
   - component: {fileID: 286739387}
   - component: {fileID: 286739386}
-  - component: {fileID: 286739389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -606,22 +605,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 23.452, y: 33.026, z: -0.495}
---- !u!114 &286739389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286739385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd248a7bd6c1b8d45971d8345ae3f773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeCamera: {fileID: 11400000, guid: 3ed1927ea577d0d41804d932efa00310, type: 2}
-  camSensibility: 100
-  camHeight: 1
-  meshesToDisabel: []
 --- !u!1 &344816270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1634,6 @@ GameObject:
   - component: {fileID: 1023525976}
   - component: {fileID: 1023525975}
   - component: {fileID: 1023525973}
-  - component: {fileID: 1023525974}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -1701,20 +1683,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1023525974
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023525972}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1023525975
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1756,10 +1724,8 @@ GameObject:
   - component: {fileID: 1055322509}
   - component: {fileID: 1055322508}
   - component: {fileID: 1055322513}
-  - component: {fileID: 1055322512}
   - component: {fileID: 1055322514}
-  - component: {fileID: 1055322515}
-  - component: {fileID: 1055322516}
+  - component: {fileID: 1055322517}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1847,19 +1813,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1055322512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055322507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1a9c81e956dfc45b1dd5b36778e75d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 4
 --- !u!54 &1055322513
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1888,43 +1841,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875704336048f8a46939e94a516d5815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputChangeDif: 0
---- !u!114 &1055322515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055322507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b074968f7b1aae488ef29548563974d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 5
-  stepHeight: 0.5
-  grounded: 0
---- !u!114 &1055322516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055322507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025b1fe59687dc47b8d3651bdf7869e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rende: {fileID: 1023525973}
-  maxBattery: 100
+  currentState: {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
+  allStates:
+  - {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
+  - {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
+  ActiveObject: 0
+  rende: {fileID: 0}
   battery: 0
-  healDuration: 1
-  rechargeDuration: 3
-  substractVelocity: 20
-  autoSubstractVelocity: 20
-  curation: 0
-  autoConsum: 1
+  inputChangeDif: 0.5
+  playerState: 0
+  hasReceivedEvent: 1
+--- !u!114 &1055322517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055322507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b788d03af573b44798e5b8f990663f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepHeight: 0.5
 --- !u!1 &1107851869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1874,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1107851871}
   - component: {fileID: 1107851870}
-  - component: {fileID: 1107851872}
   m_Layer: 0
   m_Name: CamChanger (1)
   m_TagString: Untagged
@@ -1971,20 +1909,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1107851872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107851869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c72732ad4530540428d6257549909f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camPosition: {x: 10.580749, y: 6.023188, z: -8.797996}
-  camRotation: {x: 16.995026, y: 307.3444, z: -0.0011034518}
 --- !u!1 &1299603328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +2826,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1900809920}
   - component: {fileID: 1900809919}
-  - component: {fileID: 1900809918}
   m_Layer: 0
   m_Name: CamChanger
   m_TagString: Untagged
@@ -2910,20 +2833,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900809918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900809917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c72732ad4530540428d6257549909f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camPosition: {x: -6.688, y: 5.95, z: -10}
-  camRotation: {x: 23.451696, y: 33.026093, z: 359.5048}
 --- !u!65 &1900809919
 BoxCollider:
   m_ObjectHideFlags: 0

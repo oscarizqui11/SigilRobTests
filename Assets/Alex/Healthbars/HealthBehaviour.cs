@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class HealthBehaviour : MonoBehaviour
+[CreateAssetMenu(menuName = "FSM/Player/Action/HealthBehaviour", fileName = "AcHealthBehaviour")]
+public class HealthBehaviour : Action
 {
     private float damageAcumulation;
     private float damageAcumulationCount;
     private float healthAcumulation;
     private float healthAcumulationCount;
 
-    public Renderer rende;
     [SerializeField]
     private int maxBattery;
-    public float battery;
 
     [Tooltip("Duracion de recarga con potis")]
     [SerializeField]
@@ -35,60 +35,62 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField]
     private bool autoConsum;
 
+    private PlayerController playerController;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Innit(Controller controller)
     {
-        battery = maxBattery;
+        playerController = (PlayerController)controller;
+
+        playerController.battery = maxBattery;
         curation = false;
     }
 
-    void FixedUpdate()
+    public override void Act(Controller controller)
     {
         //Variables
-        if(curation)
+        if (curation)
         {
-            battery += Time.fixedDeltaTime * (maxBattery / rechargeDuration);
+            playerController.battery += Time.fixedDeltaTime * (maxBattery / rechargeDuration);
         }
         else if(autoConsum)
         {
-            battery -= Time.fixedDeltaTime * (maxBattery / autoSubstractVelocity);
+            playerController.battery -= Time.fixedDeltaTime * (maxBattery / autoSubstractVelocity);
         }
 
 
         if(damageAcumulationCount > 0)
         {
-            battery -= damageAcumulation / damageAcumulationCount;
+            playerController.battery -= damageAcumulation / damageAcumulationCount;
             damageAcumulation -= damageAcumulation / damageAcumulationCount;
             damageAcumulationCount--;
         }
 
         if (healthAcumulationCount > 0)
         {
-            battery += healthAcumulation / healthAcumulationCount;
+            playerController.battery += healthAcumulation / healthAcumulationCount;
             healthAcumulation -= healthAcumulation / healthAcumulationCount;
             healthAcumulationCount--;
         }
 
         //Limites
-        if (battery <= 0)
+        if (playerController.battery <= 0)
         {
-            battery = 0;
+            playerController.battery = 0;
             damageAcumulation = 0;
             damageAcumulationCount = 0;
         }
-        else if(battery >= maxBattery)
+        else if(playerController.battery >= maxBattery)
         {
-            battery = maxBattery;
+            playerController.battery = maxBattery;
             healthAcumulation = 0;
             healthAcumulationCount = 0;
         }
-        
-        rende.material.SetFloat("_Health", battery / maxBattery);
+
+        playerController.rende.material.SetFloat("_Health", playerController.battery / maxBattery);
     }
 
 
-    public void SubstractHealth(int substract)
+    /*public void SubstractHealth(int substract)
     {
         damageAcumulation += substract;
         damageAcumulationCount += substractVelocity;
@@ -98,7 +100,7 @@ public class HealthBehaviour : MonoBehaviour
     {
         healthAcumulation += healthAdded;
         healthAcumulationCount += healthAdded * healDuration;
-    }
+    }*/
 
     public void SetAutoCuration(bool setCuration)
     {

@@ -7,6 +7,7 @@ using FSM;
 public class DoubleJumpBehaviour : Action
 {
     [SerializeField] private float jumpForce;
+    [SerializeField] private float batterySubstraction;
 
     private bool DoubleJumpUsed = false;
 
@@ -26,6 +27,7 @@ public class DoubleJumpBehaviour : Action
         {
             playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
             DoubleJumpUsed = true;
+            playerController.battery -= batterySubstraction;
         }
     }
 }
