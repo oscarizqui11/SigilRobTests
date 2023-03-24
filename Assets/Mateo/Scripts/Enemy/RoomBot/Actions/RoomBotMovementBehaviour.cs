@@ -32,44 +32,43 @@ public class RoomBotMovementBehaviour : Action
     public override void Innit(Controller controller)
     {
         roomBotController = (RoomBotController)controller;
-
-        roomBotController.transform.position = roomBotController.pos[0];
-        index = 1;
-        assignedPoint = false;
     }
 
     public override void Act(Controller controller)
     {
-        if (!assignedPoint)
+        if (!roomBotController.NotActive_)
         {
-            pointA = roomBotController.transform.position;
-            pointB = roomBotController.pos[index];
+            if (!assignedPoint)
+            {
+                pointA = roomBotController.transform.position;
+                pointB = roomBotController.pos[index];
 
-            float dist = Vector3.Distance(pointA, pointB);
+                float dist = Vector3.Distance(pointA, pointB);
 
-            totalTime = dist / speed;
-            assignedPoint = true;
+                totalTime = dist / speed;
+                assignedPoint = true;
 
-            dir = (pointB - pointA).normalized;
-            lookRotation = Quaternion.LookRotation(dir);
-        }
+                dir = (pointB - pointA).normalized;
+                lookRotation = Quaternion.LookRotation(dir);
+            }
 
-        currentTime += Time.deltaTime;
-        factor = currentTime / totalTime;
+            currentTime += Time.deltaTime;
+            factor = currentTime / totalTime;
 
-        Vector3 valueIPos = pointA + (pointB - pointA) * factor;
-        roomBotController.transform.position = valueIPos;
-        roomBotController.transform.rotation = Quaternion.Slerp(roomBotController.transform.rotation, lookRotation, Time.deltaTime * speedRotation);
+            Vector3 valueIPos = pointA + (pointB - pointA) * factor;
+            roomBotController.transform.position = valueIPos;
+            roomBotController.transform.rotation = Quaternion.Slerp(roomBotController.transform.rotation, lookRotation, Time.deltaTime * speedRotation);
 
-        if (currentTime > totalTime)
-        {
-            currentTime = 0;
-            assignedPoint = false;
+            if (currentTime > totalTime)
+            {
+                currentTime = 0;
+                assignedPoint = false;
 
-            if (index < roomBotController.pos.Length - 1)
-                index++;
-            else
-                index = 0;
+                if (index < roomBotController.pos.Length - 1)
+                    index++;
+                else
+                    index = 0;
+            }
         }
     }
 }
