@@ -9,6 +9,7 @@ public class PlayerController : Controller
     public static PlayerController _playerController { get; private set; }
     public Rigidbody _rb { get; private set; }
     public CapsuleCollider _capscol { get; private set; }
+    public MovementBH _mb { get; private set; }
 
     public Renderer rende;
 
@@ -43,6 +44,7 @@ public class PlayerController : Controller
 
     public override void Start()
     {
+        _mb = GetComponent<MovementBH>();
         _rb = GetComponent<Rigidbody>();
         _capscol = GetComponent<CapsuleCollider>();
 
