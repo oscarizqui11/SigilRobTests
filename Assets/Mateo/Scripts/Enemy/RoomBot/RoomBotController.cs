@@ -8,7 +8,9 @@ public class RoomBotController : Controller
     public static RoomBotController _roomBotController { get; private set; }
 
     public Vector3[] pos;
-    public bool NotActive_;
+    public Light light_;
+    
+    [HideInInspector] public bool NotActive_;
 
     //Events
     [HideInInspector] public bool hasReceivedEvent = true;

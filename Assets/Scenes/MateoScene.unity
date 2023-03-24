@@ -3015,7 +3015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1894471490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3109,9 +3109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab9a25fe7d67964f9a15273a42440bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
-  allStates: []
+  currentState: {fileID: 11400000, guid: a50780358d7ec7844964068e4d5f314c, type: 2}
+  allStates:
+  - {fileID: 11400000, guid: a50780358d7ec7844964068e4d5f314c, type: 2}
+  - {fileID: 11400000, guid: 54cd595b16e1b914787b98e4b5834493, type: 2}
   ActiveObject: 0
+  pos:
+  - {x: -2, y: 0.11, z: -2}
+  - {x: 2, y: 0.11, z: -2}
+  - {x: 2, y: 0.11, z: 2}
+  - {x: -2, y: 0.11, z: 2}
+  light_: {fileID: 1487676632}
   NotActive_: 0
   hasReceivedEvent: 1
 --- !u!1 &1928263485

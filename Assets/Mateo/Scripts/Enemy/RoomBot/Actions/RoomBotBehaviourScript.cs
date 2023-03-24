@@ -15,14 +15,14 @@ public class RoomBotBehaviourScript : RoomBotActionBehaviour
                 {
                     roomBotController.NotActive_ = true;
                     timer = cooldownMax / 8;
-                    light_.color = color_;
+                    roomBotController.light_.color = color_;
                 }
                 else
                 {
                     roomBotController.NotActive_ = false;
                     cooldown = cooldownMax;
-                    light_.enabled = true;
-                    light_.color = Color.red;
+                    roomBotController.light_.enabled = true;
+                    roomBotController.light_.color = Color.red;
                 }
             }
 

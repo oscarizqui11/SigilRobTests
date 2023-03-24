@@ -16,7 +16,7 @@ public class RoomBotSpecialBehaviourScript : RoomBotActionBehaviour
                 if (!roomBotController.NotActive_)
                 {
                     roomBotController.NotActive_ = true;
-                    light_.color = color_;
+                    roomBotController.light_.color = color_;
                 }
 
                 colliders[0].gameObject.GetComponent<Rigidbody>().velocity = Vector3.up * bounce;

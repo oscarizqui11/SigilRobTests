@@ -6,6 +6,7 @@ using FSM;
 public abstract class RoomBotActionBehaviour : Action
 {
     #region Params
+    [Header("Collider Parameters")]
     [SerializeField] private Vector3 boxLocation;
     [SerializeField] private Vector3 boxSize;
     [SerializeField] private LayerMask playerMask;
@@ -14,7 +15,6 @@ public abstract class RoomBotActionBehaviour : Action
 
     [Header("Reactivated Parameters")]
     [SerializeField] protected float cooldownMax;
-    [SerializeField] protected Light light_;
     [SerializeField] protected Color color_;
 
     protected float cooldown;
@@ -48,7 +48,7 @@ public abstract class RoomBotActionBehaviour : Action
                 timer -= Time.deltaTime;
             else
             {
-                light_.enabled = !light_.enabled;
+                roomBotController.light_.enabled = !roomBotController.light_.enabled;
                 timer = cooldown / 8;
             }
 
@@ -56,8 +56,8 @@ public abstract class RoomBotActionBehaviour : Action
             {
                 roomBotController.NotActive_ = false;
                 cooldown = cooldownMax;
-                light_.enabled = true;
-                light_.color = Color.red;
+                roomBotController.light_.enabled = true;
+                roomBotController.light_.color = Color.red;
             }
         }
     }

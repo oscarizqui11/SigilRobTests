@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57dfe8eb83bac1244b55fa9c83e6cff7, type: 3}
   m_Name: AcRoomBotSpecialBehaviourScript
   m_EditorClassIdentifier: 
-  boxLocation: {x: 0, y: 0, z: 0}
-  boxSize: {x: 0, y: 0, z: 0}
+  boxLocation: {x: 0, y: 0.11, z: 0}
+  boxSize: {x: 0.5, y: 1, z: 0.5}
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
-  cooldownMax: 0
-  light_: {fileID: 0}
-  color_: {r: 0, g: 0, b: 0, a: 0}
-  bounce: 0
+    m_Bits: 64
+  cooldownMax: 3
+  color_: {r: 1, g: 0.5686275, b: 0, a: 0}
+  bounce: 4
