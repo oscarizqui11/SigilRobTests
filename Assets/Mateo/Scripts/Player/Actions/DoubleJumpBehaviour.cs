@@ -18,7 +18,7 @@ public class DoubleJumpBehaviour : Action
         playerController = (PlayerController)controller;
     }
 
-    public override void Act(Controller controller)
+    public override void Act()
     {
         if (playerController.playerState == PlayerController.PlayerState.Grounded)
             DoubleJumpUsed = false;

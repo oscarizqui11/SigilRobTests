@@ -8,6 +8,7 @@ namespace FSM
     public class State : ScriptableObject
     {
         public Action[] actions;
+        public Action[] fixedUpdateActions;
         public Transition[] transitions;
 
         public void StartState(Controller controller)
@@ -21,6 +22,11 @@ namespace FSM
             CheckTransitions(controller);
         }
 
+        public void FixedUpdateState(Controller controller)
+        {
+            DoActionsFixedUpdate(controller);
+        }
+
         private void StartAction(Controller controller)
         {
             for (int i = 0; i < actions.Length; i++)
@@ -30,7 +36,13 @@ namespace FSM
         private void DoActions(Controller controller) 
         { 
             for(int i = 0; i < actions.Length; i++)
-                actions[i].Act(controller);
+                actions[i].Act();
+        }
+
+        private void DoActionsFixedUpdate(Controller controller)
+        {
+            for (int i = 0; i < actions.Length; i++)
+                fixedUpdateActions[i].Act();
         }
 
         private void CheckTransitions(Controller controller)

@@ -15,7 +15,7 @@ public class JumpBehaviour : Action
         playerController = (PlayerController)controller;
     }
 
-    public override void Act(Controller controller)
+    public override void Act()
     {
         if (Input.GetButtonDown("Jump"))
         {

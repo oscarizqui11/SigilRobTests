@@ -18,7 +18,7 @@ public class MovementBehaviour : Action
         playerController = (PlayerController)controller;
     }
 
-    public override void Act(Controller controller)
+    public override void Act()
     {
         if (Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > playerController.inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > playerController.inputChangeDif)
         {
@@ -36,24 +36,6 @@ public class MovementBehaviour : Action
             playerController.transform.rotation = Quaternion.LookRotation(movDir, playerController.transform.up);
         }
     }
-
-    /*public void RotateDirection2D(Vector3 dir, float initialRotation)
-    {
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - initialRotation);
-    }
-    public void RotateDirection2D(Vector3 dir)
-    {
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
-    }
-    public void RotateDirection(Vector3 dir)
-    {
-        transform.rotation = Quaternion.Euler(0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, 0);
-    }
-
-    public void MoveTowards(Vector3 dir)
-    {
-        transform.position = transform.position + velocity * dir * Time.fixedDeltaTime;
-    }*/
 
     public void MoveRB(Vector3 dir)
     {

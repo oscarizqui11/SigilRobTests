@@ -20,7 +20,7 @@ public class DashBehaviour : Action
         playerController = (PlayerController)controller;
     }
 
-    public override void Act(Controller controller)
+    public override void Act()
     {
         if (DashCdTimer > 0)
             DashCdTimer -= Time.deltaTime;
