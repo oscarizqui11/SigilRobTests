@@ -1506,6 +1506,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
   - {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
   ActiveObject: 0
+  isFixedUpdate: 0
   rende: {fileID: 355600133}
   battery: 0
   inputChangeDif: 0.5
@@ -2524,7 +2525,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339550280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b7c61a71ae6ec74cb64f2c3f63df015, type: 3}
   m_Name: 
@@ -2532,8 +2533,10 @@ MonoBehaviour:
   currentState: {fileID: 11400000, guid: 7add65379d3ff7f46b5b8806c1dccce7, type: 2}
   allStates: []
   ActiveObject: 0
-  GameState: 
-  controllers: []
+  isFixedUpdate: 0
+  GameState: 00000000
+  controllers:
+  - {fileID: 0}
   hasReceivedEvent: 1
   gameState: 0
 --- !u!1 &1487676630
@@ -3008,7 +3011,8 @@ GameObject:
   - component: {fileID: 1894471491}
   - component: {fileID: 1894471490}
   - component: {fileID: 1894471497}
-  - component: {fileID: 1894471499}
+  - component: {fileID: 1894471501}
+  - component: {fileID: 1894471500}
   - component: {fileID: 1894471498}
   m_Layer: 8
   m_Name: Roombot
@@ -3016,7 +3020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1894471490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3105,24 +3109,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894471489}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57dfe8eb83bac1244b55fa9c83e6cff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: []
-  speed: 0
-  speedRotation: 0
-  boxLocation: {x: 0, y: 0, z: 0}
-  boxSize: {x: 0, y: 0, z: 0}
+  boxLocation: {x: 0, y: 0.11, z: 0}
+  boxSize: {x: 0.5, y: 0.2, z: 0.5}
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
-  cooldownMax: 0
-  light_: {fileID: 0}
-  color_: {r: 0, g: 0, b: 0, a: 0}
-  bounce: 0
---- !u!114 &1894471499
+    m_Bits: 64
+  cooldownMax: 5
+  color_: {r: 1, g: 0.5372549, b: 0, a: 0}
+  bounce: 3
+--- !u!114 &1894471500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3131,20 +3131,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1894471489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8240f691ba2e2e42a0a3040e27553ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 06215958d8452ac4bb472cf9ab7c77a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: []
-  speed: 0
-  speedRotation: 0
-  boxLocation: {x: 0, y: 0, z: 0}
-  boxSize: {x: 0, y: 0, z: 0}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  cooldownMax: 0
-  light_: {fileID: 0}
-  color_: {r: 0, g: 0, b: 0, a: 0}
+  pos:
+  - {x: -2, y: 0.1, z: -2}
+  - {x: 2, y: 0.1, z: -2}
+  - {x: 2, y: 0.1, z: 2}
+  - {x: -2, y: 0.1, z: 2}
+  speed: 1
+  speedRotation: 3
+--- !u!114 &1894471501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894471489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ad36c03496e394e806a9f10f200ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928263485
 GameObject:
   m_ObjectHideFlags: 0

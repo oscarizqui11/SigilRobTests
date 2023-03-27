@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomBotBehaviour : RoomBotController
+public class RoomBotBehaviour : RoomBotCollisionBehaviour
 {
     public override void ExtraAction(Collider[] colliders)
     {
@@ -12,7 +12,7 @@ public class RoomBotBehaviour : RoomBotController
             {
                 if (!NotActive_)
                 {
-                    NotActive_ = true;
+                    NotActive_ = true; 
                     timer = cooldownMax / 8;
                     light_.color = color_;
                 }

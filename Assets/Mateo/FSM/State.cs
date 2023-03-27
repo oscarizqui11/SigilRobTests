@@ -31,6 +31,9 @@ namespace FSM
         {
             for (int i = 0; i < actions.Length; i++)
                 actions[i].Innit(controller);
+
+            for (int i = 0; i < fixedUpdateActions.Length; i++)
+                fixedUpdateActions[i].Innit(controller);
         }
 
         private void DoActions(Controller controller) 
