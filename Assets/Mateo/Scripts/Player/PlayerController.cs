@@ -2,6 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FSM;
+using SRobEngine.SRobPlayer;
+
+namespace SRobEngine
+{
+    namespace SRobPlayer
+    {
+        public enum PlayerState
+        {
+            Grounded,
+            Airborne,
+            Ramming,
+            Shooting,
+            Holding,
+            Healing
+        };
+    }
+}
 
 public class PlayerController : Controller
 {
@@ -14,19 +31,7 @@ public class PlayerController : Controller
     public Renderer rende;
 
     public float battery;
-
-    [Range(0,1)]
-    public float inputChangeDif;
-
-    public enum PlayerState
-    {
-        Grounded,
-        Airborne,
-        Ramming,
-        Shooting,
-        Holding,
-        Healing
-    };
+    
     [HideInInspector] public PlayerState playerState;
     #endregion
 

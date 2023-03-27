@@ -12,7 +12,7 @@ public class EvaluateMovementInputs : Action
 
     private PlayerController playerController;
 
-    public MyVec3Event onChangeDir;
+    //public MyVec3Event onChangeDir;
 
     public GameEvent changeDirection;
 
@@ -41,8 +41,6 @@ public class EvaluateMovementInputs : Action
 
         movDir = movDirVer + movDirHor;
 
-        Debug.Log(movDir);
-
         /*if (Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > playerController.inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > playerController.inputChangeDif)
         {
             inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -53,12 +51,10 @@ public class EvaluateMovementInputs : Action
             movDir = movDirVer + movDirHor;
         }*/
 
-        if (movDir.magnitude > 0)
-        {
-            changeDirection.Raise(movDir);
+        changeDirection.Raise(movDir);
             //onChangeDir.Invoke(movDir);
             //playerController._mb.MoveRB(movDir.normalized * movDir.normalized.magnitude, velocity);
             //playerController.transform.rotation = Quaternion.LookRotation(movDir, playerController.transform.up);
-        }
+        
     }    
 }

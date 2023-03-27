@@ -13,3 +13,29 @@ MonoBehaviour:
   m_Name: AcDoubleJumpBehaviour
   m_EditorClassIdentifier: 
   jumpForce: 3
+  batterySubstraction: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0ae8d234-12b3-4517-9d9f-a7c3bb83ccc3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: de561ff0-9c57-4400-961a-5524e5651a35
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 0b5058a7-0e5c-4800-b200-ed9b6fe233f2
+      m_Path: <XInputController>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0

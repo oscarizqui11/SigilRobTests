@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SRobEngine.SRobPlayer;
 
 public class DetectCollisionScript : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class DetectCollisionScript : MonoBehaviour
             {
                 //Debug.Log(collision.collider.bounds.max.y);
                 //Debug.Log("Caida!");
-                playerController.playerState = PlayerController.PlayerState.Grounded;
+                playerController.playerState = PlayerState.Grounded;
             }
         }
     }
@@ -55,7 +56,7 @@ public class DetectCollisionScript : MonoBehaviour
             //Debug.Log(collision.gameObject.name + ", " + collision.collider.bounds.ClosestPoint(transform.position + _capscol.center - new Vector3(0, _capscol.height / 2 + _capscol.radius / 2, 0)).y);
             //Debug.Log(transform.position.y + _capscol.center.y - _capscol.height / 2 + _capscol.radius * stepHeight);
             //Debug.Log("Salto!");
-            playerController.playerState = PlayerController.PlayerState.Airborne;
+            playerController.playerState = PlayerState.Airborne;
         }
     }
 

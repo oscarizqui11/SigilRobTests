@@ -8,17 +8,10 @@ public class MovementController : MonoBehaviour
 
     private Vector3 direction;
 
-    public MyVec3Event e_ChangeDir;
-
     // Start is called before the first frame update
     void Start()
     {
         _mb = GetComponent<MovementBH>();
-
-        if (e_ChangeDir == null)
-            e_ChangeDir = new MyVec3Event();
-
-        e_ChangeDir.AddListener(ChangeMovementDir);
     }
 
     // Update is called once per frame
