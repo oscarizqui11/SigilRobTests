@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af61f7f05de087848bb36aa50cd20ead, type: 3}
-  m_Name: GroundedState
+  m_Name: GroundedState + FirstPerson
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: eaff67cbe38e7b54db77ae7a54067763, type: 2}
   - {fileID: 11400000, guid: f5376928ddf9ee9469f5fe29f671d096, type: 2}
   - {fileID: 11400000, guid: 1a6d2320b04dda742bda5b2a042fc565, type: 2}
   - {fileID: 11400000, guid: 09553c3283e6f0c468d5fa494df57254, type: 2}
+  - {fileID: 11400000, guid: a74c7efafe362264fadf067236d5a358, type: 2}
   - {fileID: 11400000, guid: a74c7efafe362264fadf067236d5a358, type: 2}
   - {fileID: 11400000, guid: 609fcbbc00d1b0a41a8093ea4a213e25, type: 2}
   transitions:

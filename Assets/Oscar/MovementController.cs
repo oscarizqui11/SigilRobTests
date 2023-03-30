@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour
 
     private bool IsMoving()
     {
-        return direction.magnitude > 0.5;
+        return direction.magnitude > 0.5;//Esta hardcoded hay que cambiarlo
     }
 
     public void ChangeMovementDir(Vector3 newDir)

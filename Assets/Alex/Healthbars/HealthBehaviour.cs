@@ -90,7 +90,7 @@ public class HealthBehaviour : Action
     }
 
 
-    /*public void SubstractHealth(int substract)
+    public void SubstractHealth(int substract)
     {
         damageAcumulation += substract;
         damageAcumulationCount += substractVelocity;
@@ -100,7 +100,7 @@ public class HealthBehaviour : Action
     {
         healthAcumulation += healthAdded;
         healthAcumulationCount += healthAdded * healDuration;
-    }*/
+    }
 
     public void SetAutoCuration(bool setCuration)
     {

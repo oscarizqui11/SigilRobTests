@@ -15,7 +15,8 @@ namespace SRobEngine
             Ramming,
             Shooting,
             Holding,
-            Healing
+            Healing,
+            FirstPerson
         };
     }
 }
@@ -32,7 +33,7 @@ public class PlayerController : Controller
 
     public float battery;
     
-    [HideInInspector] public PlayerState playerState;
+    public PlayerState playerState;
     #endregion
 
     //Events

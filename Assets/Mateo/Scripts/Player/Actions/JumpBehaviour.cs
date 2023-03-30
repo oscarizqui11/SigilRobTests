@@ -4,6 +4,7 @@ using UnityEngine;
 using FSM;
 using UnityEngine.InputSystem;
 using SRobEngine.SRobPlayer;
+using SRobEngine;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/JumpBehaviour", fileName = "AcJumpBehaviour")]
 public class JumpBehaviour : Action
@@ -22,6 +23,7 @@ public class JumpBehaviour : Action
 
     public override void Act(Controller controller)
     {
+
         //if (Input.GetButtonDown("Jump"))
         if(jumpAction.triggered)
         {
