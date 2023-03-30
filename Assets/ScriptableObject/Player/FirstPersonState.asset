@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FirstPersonState
   m_EditorClassIdentifier: 
   actions:
+  - {fileID: 11400000, guid: 41907bc182a703347a7eeb80173fb469, type: 2}
   - {fileID: 11400000, guid: 609fcbbc00d1b0a41a8093ea4a213e25, type: 2}
   - {fileID: 11400000, guid: a74c7efafe362264fadf067236d5a358, type: 2}
   transitions:

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcef97687b65b984b91a7b845c6f3c38, type: 3}
+  m_Name: EvaluateCameraRotationInput
+  m_EditorClassIdentifier: 
+  camSensibility: 100
+  changeCameraRotation: {fileID: 0}
+  lookXAxisAction:
+    m_Name: Look X Axis
+    m_Type: 2
+    m_ExpectedControlType: Axis
+    m_Id: 36ec3071-771f-4907-9a11-79b1355b867c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 09855370-0755-492a-bc87-74025e2b8b6b
+      m_Path: <Mouse>/delta/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look X Axis
+      m_Flags: 0
+    m_Flags: 0
+  lookYAxisAction:
+    m_Name: Look Y Axis
+    m_Type: 2
+    m_ExpectedControlType: Axis
+    m_Id: 86536b25-5c0b-4bdf-a3d6-ad0a11bd8ac0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7c6a8ab8-36f6-48aa-89d0-a0ea2c6ec427
+      m_Path: <Mouse>/delta/y
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look Y Axis
+      m_Flags: 0
+    m_Flags: 0

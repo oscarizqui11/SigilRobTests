@@ -81,9 +81,28 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void UpdateCameraController(float xAxis, float yAxis)
+    {
+        //float mouseX = Input.GetAxisRaw("Mouse X") * camSensibility * Time.deltaTime;
+        //xRotation += Input.GetAxisRaw("Mouse Y") * camSensibility * Time.deltaTime;
+        float mouseX = xAxis * camSensibility * Time.deltaTime;
+        xRotation += yAxis * camSensibility * Time.deltaTime;
+
+        xRotation = Mathf.Clamp(xRotation, -80, 80);
+
+        _cam.transform.eulerAngles = new Vector3(-xRotation, _cam.transform.eulerAngles.y + mouseX, 0);
+        _player.transform.Rotate(0, mouseX, 0);
+    }
+
     public bool GetIsFirstPerson()
     {
         return isFirstPerson;
+    }
+
+    public void SetCameraToFixedPos()
+    {
+        SetCameraPosition(fixedCamPosition);
+        SetCameraRotation(fixedCamRotation);
     }
 
     public void SetCameraPosition(Vector3 newPos)

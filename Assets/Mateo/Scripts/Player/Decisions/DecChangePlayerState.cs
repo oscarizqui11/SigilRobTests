@@ -13,7 +13,7 @@ public class DecChangePlayerState : Decision
     {
         PlayerController playerController = (PlayerController)controller;
 
-        Debug.Log(playerController.playerState + "vs" + playerState);
+        //Debug.Log(playerController.playerState + "vs" + playerState);
 
         if (((int)playerController.playerState) == ((int)playerState))
             return true;

@@ -37,6 +37,7 @@ public class EvaluateFirstPersonCamera : Action
             else
             {
                 playerController.playerState = PlayerState.Grounded;
+                //mainCamController.SetCameraToFixedPos();
             }
 
         }        
