@@ -3101,6 +3101,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   allStates:
   - {fileID: 11400000, guid: 8979de118252efa4d861585f42eac209, type: 2}
+  - {fileID: 11400000, guid: d0566eb0756a32a499968f0f27e75bc3, type: 2}
   type: 0
   isFixedUpdate: 1
   pos:
@@ -3513,6 +3514,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   allStates:
   - {fileID: 11400000, guid: 8979de118252efa4d861585f42eac209, type: 2}
+  - {fileID: 11400000, guid: d0566eb0756a32a499968f0f27e75bc3, type: 2}
   type: 0
   isFixedUpdate: 1
   pos:
