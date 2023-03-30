@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f7f05de087848bb36aa50cd20ead, type: 3}
   m_Name: GameplayState
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  updateActions: []
+  fixedUpdateActions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: 8ffe4c571046ac54d8f52d683c876a94, type: 2}
+    trueState: {fileID: 11400000, guid: 11b4e87f7f3e18d41b3d40f6a06cdbc8, type: 2}

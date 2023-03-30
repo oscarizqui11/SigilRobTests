@@ -7,14 +7,13 @@ public class GameManager : Controller
 {
     public static GameManager _gameManager { get; private set; }
 
-    public int[] GameState;
     public List<Controller> controllers = new List<Controller>();
 
     //Events
     [HideInInspector] public bool hasReceivedEvent = true;
     [HideInInspector] public Event receivedEvent;
 
-    [HideInInspector] public int gameState;
+    public int gameState;
 
     private void Awake()
     {

@@ -38,6 +38,14 @@ public class ScriptEditor : Editor
                             EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 80, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varFloat1)), new GUIContent("Speed Pos:"));
                             EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 100, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varFloat2)), new GUIContent("Speed Rot:"));
                             break;
+                        case Script.Command.ScriptingActType.moveCameraPos:
+                            EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 40, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varVector1)), new GUIContent("Pos:"));
+                            EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 60, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varFloat1)), new GUIContent("Speed Pos:"));
+                            break;
+                        case Script.Command.ScriptingActType.moveCameraRot:
+                            EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 40, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varVector2)), new GUIContent("Rot:"));
+                            EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 60, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varFloat2)), new GUIContent("Speed Rot:"));
+                            break;
                         case Script.Command.ScriptingActType.playMusic:
                             EditorGUI.PropertyField(new Rect(rect.x + 25, rect.y + 40, rect.width - 25, EditorGUIUtility.singleLineHeight), command.FindPropertyRelative(nameof(Script.Command.varString)), new GUIContent("Music name:"));
                             break;
@@ -75,6 +83,12 @@ public class ScriptEditor : Editor
                             break;
                         case Script.Command.ScriptingActType.moveCamera:
                             height = 35;
+                            break;
+                        case Script.Command.ScriptingActType.moveCameraPos:
+                            height = 70;
+                            break;
+                        case Script.Command.ScriptingActType.moveCameraRot:
+                            height = 70;
                             break;
                         case Script.Command.ScriptingActType.playMusic:
                             height = 95;

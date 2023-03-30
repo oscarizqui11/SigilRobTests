@@ -13,6 +13,8 @@ public class Script : ScriptableObject
         {
             talk,
             moveCamera,
+            moveCameraPos,
+            moveCameraRot,
             playMusic,
             playSFX,
             playVoice,

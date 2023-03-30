@@ -18,7 +18,7 @@ public class MovementBehaviour : Action
         playerController = (PlayerController)controller;
     }
 
-    public override void Act()
+    public override void Act(Controller controller)
     {
         if (Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > playerController.inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > playerController.inputChangeDif)
         {

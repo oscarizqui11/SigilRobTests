@@ -5,7 +5,7 @@ using FSM;
 
 public class PlayerController : Controller
 {
-    #region Param
+    #region Params
     public static PlayerController _playerController { get; private set; }
     public Rigidbody _rb { get; private set; }
     public CapsuleCollider _capscol { get; private set; }
@@ -17,15 +17,7 @@ public class PlayerController : Controller
     [Range(0,1)]
     public float inputChangeDif;
 
-    public enum PlayerState
-    {
-        Grounded,
-        Airborne,
-        Shooting,
-        Holding,
-        Healing
-    };
-    [HideInInspector] public PlayerState playerState;
+    [HideInInspector] public PlayerStates playerState;
     #endregion
 
     //Events
@@ -46,15 +38,5 @@ public class PlayerController : Controller
         _capscol = GetComponent<CapsuleCollider>();
 
         base.Start();
-    }
-
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
     }
 }

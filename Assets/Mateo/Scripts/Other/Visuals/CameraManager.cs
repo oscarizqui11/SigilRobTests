@@ -88,5 +88,7 @@ public class CameraManager : MonoBehaviour
     }
 
     public bool MoveCamera(Vector3 pos, Vector3 ang, float speedPos, float speedRot)
-    { return MoveCameraPos(pos, speedPos) || MoveCameraRot(ang, speedRot); }
+    { 
+        return MoveCameraPos(pos, speedPos) || MoveCameraRot(ang, speedRot);
+    }
 }

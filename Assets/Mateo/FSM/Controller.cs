@@ -10,13 +10,12 @@ namespace FSM
         public State currentState;
         public State[] allStates;
 
-        public bool ActiveObject;
-        public bool isFixedUpdate;
+        public int type;
+
+        [SerializeField] private bool isFixedUpdate;
 
         virtual public void Start()
-        { 
-            ActiveObject = true;
-
+        {
             for (int i = 0; i < allStates.Length; i++)
                 allStates[i].StartState(this);
 
@@ -25,15 +24,12 @@ namespace FSM
 
         virtual public void Update()
         {
-            if (!ActiveObject)
-                return;
-
             currentState.UpdateState(this);
         }
 
         virtual public void FixedUpdate()
         {
-            if (!ActiveObject || !isFixedUpdate)
+            if (!isFixedUpdate)
                 return;
 
             currentState.FixedUpdateState(this);

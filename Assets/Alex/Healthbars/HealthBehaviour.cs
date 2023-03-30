@@ -45,7 +45,7 @@ public class HealthBehaviour : Action
         curation = false;
     }
 
-    public override void Act()
+    public override void Act(Controller controller)
     {
         //Variables
         if (curation)

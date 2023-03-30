@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e355d4fef8df2488fd01dccb52f278, type: 3}
+  m_Name: Script_
+  m_EditorClassIdentifier: 
+  commands:
+  - scriptingActType: 1
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 5
+    varFloat2: 5
+  - scriptingActType: 8
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 4
+    varFloat2: 0
+  - scriptingActType: 2
+    conver: {fileID: 0}
+    varVector1: {x: 10, y: 10, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 7
+    varFloat2: 0
+  - scriptingActType: 8
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 0, y: 0, z: 0}
+    varString: 
+    varFloat1: 8
+    varFloat2: 0
+  - scriptingActType: 3
+    conver: {fileID: 0}
+    varVector1: {x: 0, y: 0, z: 0}
+    varVector2: {x: 25, y: 100, z: 0}
+    varString: 
+    varFloat1: 0
+    varFloat2: 10
+  - scriptingActType: 8
+    conver: {fileID: 0}
+    varVector1: {x: 0.56, y: 2.56, z: -5.1}
+    varVector2: {x: 25.317001, y: -5.503, z: 0}
+    varString: 
+    varFloat1: 2
+    varFloat2: 50
+  - scriptingActType: 1
+    conver: {fileID: 0}
+    varVector1: {x: 0.56, y: 2.56, z: -5.1}
+    varVector2: {x: 25.317001, y: -5.503, z: 0}
+    varString: 
+    varFloat1: 10
+    varFloat2: 50
