@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a27fdd9ba7678f409b07aeec4d1b2de, type: 3}
-  m_Name: CAM_ARCHIVERO
+  m_Name: CAM_FACHADA
   m_EditorClassIdentifier: 
-  position: {x: 4.574294, y: 7.2339435, z: -7.809597}
-  rotation: {x: 43.98124, y: 29.001024, z: 0.014343716}
-  pointSize: 0.2
-  color: {r: 1, g: 0, b: 0, a: 1}
+  position: {x: -15.857182, y: 7.120186, z: -10.676094}
+  rotation: {x: 19.99617, y: 73.26885, z: 0.03761194}
+  pointSize: 0.3
+  color: {r: 0, g: 1, b: 0, a: 1}
   preview: 0

@@ -10,6 +10,9 @@ public class EvaluateMovementInputs : Action
     private Vector3 movDir;
     private Vector2 inputDir;
 
+    [SerializeField]
+    private float inputChangeDif;
+
     private PlayerController playerController;
 
     //public MyVec3Event onChangeDir;
@@ -34,13 +37,17 @@ public class EvaluateMovementInputs : Action
 
     public override void Act(Controller controller)
     {
-        inputDir = moveAction.ReadValue<Vector2>();
+        Vector2 nextInputDir = moveAction.ReadValue<Vector2>();
 
-        Vector3 movDirHor = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z).normalized * inputDir.x;
-        Vector3 movDirVer = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized * inputDir.y;
+        if (Mathf.Abs(inputDir.x - nextInputDir.x) > inputChangeDif || Mathf.Abs(inputDir.y - nextInputDir.y) > inputChangeDif)
+        {
+            inputDir = nextInputDir;
 
-        movDir = movDirVer + movDirHor;
+            Vector3 movDirHor = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z).normalized * inputDir.x;
+            Vector3 movDirVer = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z).normalized * inputDir.y;
 
+            movDir = movDirVer + movDirHor;
+        }
         /*if (Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > playerController.inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > playerController.inputChangeDif)
         {
             inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));

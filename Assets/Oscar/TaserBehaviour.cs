@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,12 +23,12 @@ public class TaserBehaviour : MonoBehaviour
 
     void Update()
     {
-        /*if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
             _energySystem.SubstractHealth(energyCost);
             taser.gameObject.SetActive(true);
             taserTimer = taserDuration;
-        }*/
+        }
     }
 
     private void FixedUpdate()
@@ -43,4 +43,4 @@ public class TaserBehaviour : MonoBehaviour
             taser.gameObject.SetActive(false);
         }
     }
-}
+}*/

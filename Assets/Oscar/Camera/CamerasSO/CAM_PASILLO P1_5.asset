@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a27fdd9ba7678f409b07aeec4d1b2de, type: 3}
-  m_Name: CAM_ARCHIVERO
+  m_Name: CAM_PASILLO P1_5
   m_EditorClassIdentifier: 
-  position: {x: 4.574294, y: 7.2339435, z: -7.809597}
-  rotation: {x: 43.98124, y: 29.001024, z: 0.014343716}
-  pointSize: 0.2
-  color: {r: 1, g: 0, b: 0, a: 1}
+  position: {x: -15.1740465, y: 7.9806533, z: -3.4248307}
+  rotation: {x: 28.819675, y: 177.0518, z: 359.9546}
+  pointSize: 0.3
+  color: {r: 0, g: 1, b: 0, a: 1}
   preview: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039b95928add71845bada166545de8c8, type: 3}
   m_Name: EvaluateMovemntInputs
   m_EditorClassIdentifier: 
+  inputChangeDif: 0.1
   changeDirection: {fileID: 11400000, guid: 0808a316e634b454db912470526faca3, type: 2}
   moveAction:
     m_Name: Move

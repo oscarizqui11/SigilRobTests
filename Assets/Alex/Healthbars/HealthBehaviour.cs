@@ -31,10 +31,6 @@ public class HealthBehaviour : Action
     /*[SerializeField]
     private bool curation;*/
 
-    [Header("La bateria se consume sola")]
-    [SerializeField]
-    private bool autoConsum;
-
     private PlayerController playerController;
 
     public override void Innit(Controller controller)
@@ -52,7 +48,7 @@ public class HealthBehaviour : Action
         {
             playerController.battery += Time.fixedDeltaTime * (maxBattery / rechargeDuration);
         }
-        else if(autoConsum)
+        else if (playerController.GetAutoConsumption())
         {
             playerController.battery -= Time.fixedDeltaTime * (maxBattery / autoSubstractVelocity);
         }

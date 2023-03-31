@@ -15,5 +15,5 @@ MonoBehaviour:
   position: {x: -2.8279285, y: 7.523818, z: -4.4934225}
   rotation: {x: 42.606106, y: 124.74277, z: 0.015144687}
   pointSize: 0.2
-  color: {r: 0, g: 0.14471078, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 1, a: 1}
   preview: 0

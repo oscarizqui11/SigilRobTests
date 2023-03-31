@@ -16,5 +16,4 @@ MonoBehaviour:
   healDuration: 1
   rechargeDuration: 3
   substractVelocity: 20
-  autoSubstractVelocity: 20
-  autoConsum: 1
+  autoSubstractVelocity: 2

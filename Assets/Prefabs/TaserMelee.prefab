@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6781200459109424359}
   - component: {fileID: 6781200459109424356}
   - component: {fileID: 8510575416551354342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TaserMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}

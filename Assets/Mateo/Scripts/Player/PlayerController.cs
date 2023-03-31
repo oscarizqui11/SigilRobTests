@@ -35,7 +35,9 @@ public class PlayerController : Controller
 
     [SerializeField]
     private bool curation;
-    
+    [SerializeField]
+    private bool autoConsum;
+
     public PlayerState playerState;
     #endregion
 
@@ -72,5 +74,14 @@ public class PlayerController : Controller
     public bool GetAutoCuration()
     {
         return curation;
+    }
+
+    public void SetAutoConsumption(bool cons)
+    {
+        autoConsum = cons;
+    }
+    public bool GetAutoConsumption()
+    {
+        return autoConsum;
     }
 }

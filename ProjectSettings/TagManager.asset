@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - PlayerAttacks
   - Enemy
   - 
   - EnemyTrigger
@@ -20,7 +20,7 @@ TagManager:
   - Traps
   - 
   - Mirror
-  - 
+  - CameraChangers
   - World
   - 
   - 

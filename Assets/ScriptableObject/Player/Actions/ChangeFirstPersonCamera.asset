@@ -29,4 +29,12 @@ MonoBehaviour:
       m_Groups: 
       m_Action: First Person
       m_Flags: 0
+    - m_Name: 
+      m_Id: 9d0f291b-4ff5-4e95-a8d0-d67a47996a79
+      m_Path: <Gamepad>/leftShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: First Person
+      m_Flags: 0
     m_Flags: 0

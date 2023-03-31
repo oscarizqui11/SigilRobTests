@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a27fdd9ba7678f409b07aeec4d1b2de, type: 3}
-  m_Name: CAM_ARCHIVERO
+  m_Name: CAM_HAB COMUN 2
   m_EditorClassIdentifier: 
-  position: {x: 4.574294, y: 7.2339435, z: -7.809597}
-  rotation: {x: 43.98124, y: 29.001024, z: 0.014343716}
-  pointSize: 0.2
-  color: {r: 1, g: 0, b: 0, a: 1}
+  position: {x: -18.33044, y: 7.997623, z: 5.2256203}
+  rotation: {x: 54.144455, y: 178.96889, z: 359.94803}
+  pointSize: 0.3
+  color: {r: 0, g: 1, b: 0, a: 1}
   preview: 0

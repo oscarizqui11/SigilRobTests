@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1262038998191155436}
   - component: {fileID: 8873316969600550497}
   - component: {fileID: 5780907840486200312}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TaserRanged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
