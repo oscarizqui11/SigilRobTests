@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b1a182b12c9ae4e85df23641c5d79f, type: 3}
   m_Name: RoomBotScriptableObject
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   speedRotation: 3
   boxLocation: {x: 0, y: 0.11, z: 0}
   boxSize: {x: 0.5, y: 0.2, z: 0.5}

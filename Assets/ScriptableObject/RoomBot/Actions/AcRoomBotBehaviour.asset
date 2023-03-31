@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8240f691ba2e2e42a0a3040e27553ed, type: 3}
   m_Name: AcRoomBotBehaviour
   m_EditorClassIdentifier: 
+  roomBotSO: {fileID: 11400000, guid: 7c1b1992f954e254282efa51622bc05f, type: 2}

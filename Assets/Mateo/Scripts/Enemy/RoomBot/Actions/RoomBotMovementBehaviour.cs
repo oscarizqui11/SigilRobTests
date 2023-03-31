@@ -6,6 +6,11 @@ using FSM;
 [CreateAssetMenu(menuName = "FSM/RoomBot/Action/RoomBotMovementBehaviour", fileName = "AcRoomBotMovementBehaviour")]
 public class RoomBotMovementBehaviour : Action
 {
+    [SerializeField] private RoomBotScriptableObject roomBotSO;
+
+    private float speed => roomBotSO.Speed;
+    private float speedRotation => roomBotSO.SpeedRot;
+
     public override void Innit(Controller controller)
     {
 
@@ -13,14 +18,8 @@ public class RoomBotMovementBehaviour : Action
 
     public override void Act(Controller controller)
     {
-        #region Params
         RoomBotController roomBotController = (RoomBotController)controller;
         Transform transform = roomBotController.transform;
-        RoomBotScriptableObject roomBotSO = roomBotController.roomBotSO;
-
-        float speed = roomBotSO.Speed;
-        float speedRotation = roomBotSO.SpeedRot;
-        #endregion
 
         if (!roomBotController.assignedPoint)
         {

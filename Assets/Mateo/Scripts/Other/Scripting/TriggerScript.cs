@@ -10,7 +10,7 @@ public class TriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //_scriptingManager._script = _script;
+        _scriptingManager._script = _script;
         _gameManager.gameState = 1;
         enabled = false;
     }

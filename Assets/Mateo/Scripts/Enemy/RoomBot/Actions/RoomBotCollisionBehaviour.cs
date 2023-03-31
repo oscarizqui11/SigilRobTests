@@ -5,6 +5,16 @@ using FSM;
 
 public abstract class RoomBotCollisionBehaviour : Action
 {
+    [SerializeField] protected RoomBotScriptableObject roomBotSO;
+
+    private Vector3 boxLocation => roomBotSO.BoxLoc;
+    private Vector3 boxSize => roomBotSO.BoxSize;
+
+    protected Color color => roomBotSO.Color;
+    private LayerMask playerMask => roomBotSO.PlayerMask;
+
+    protected float cooldownMax => roomBotSO.CDMax;
+
     public override void Innit(Controller controller)
     {
         
@@ -16,18 +26,13 @@ public abstract class RoomBotCollisionBehaviour : Action
     {
         RoomBotController roomBotController = (RoomBotController)controller;
         Transform transform = roomBotController.transform;
-        RoomBotScriptableObject roomBotSO = roomBotController.roomBotSO;
 
-        Vector3 boxLocation = roomBotSO.BoxLoc;
-        Vector3 boxSize = roomBotSO.BoxSize;
-
-        Collider[] colliders = Physics.OverlapBox(
-                                        new Vector3(transform.position.x + boxLocation.x, transform.position.y + boxLocation.y, transform.position.z + boxLocation.z),
-                                            new Vector3(transform.localScale.x * boxSize.x, transform.localScale.y * boxSize.y, transform.localScale.z * boxSize.z) / 2,
-                                                Quaternion.identity,
-                                                    roomBotSO.PlayerMask);
-
-        ExtraAction(colliders, roomBotController);
+        Collider[] colliders = Physics.OverlapBox(transform.position + boxLocation, (transform.localScale + boxSize) / 6, Quaternion.identity, playerMask, QueryTriggerInteraction.Ignore);
+        
+        if (0 < colliders.Length)
+            ExtraAction(colliders, roomBotController);
+        else
+            roomBotController.isCollinding = false;
 
         if (roomBotController.NotActive)
         {
@@ -44,7 +49,7 @@ public abstract class RoomBotCollisionBehaviour : Action
             if (roomBotController.cooldown <= 0)
             {
                 roomBotController.NotActive = false;
-                roomBotController.cooldown = roomBotController.cooldownMax;
+                roomBotController.cooldown = cooldownMax;
                 roomBotController.light_.enabled = true;
                 roomBotController.light_.color = Color.red;
             }

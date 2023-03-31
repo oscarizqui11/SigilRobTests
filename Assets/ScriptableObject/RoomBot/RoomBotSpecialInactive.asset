@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af61f7f05de087848bb36aa50cd20ead, type: 3}
+  m_Name: RoomBotSpecialInactive
+  m_EditorClassIdentifier: 
+  updateActions: []
+  fixedUpdateActions:
+  - {fileID: 11400000, guid: b3a3f5e6e393dad469cfdb4270a47b38, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 9b077eb5b4774bd4c9626d41904b8044, type: 2}
+    trueState: {fileID: 11400000, guid: 53a30b8015768a64fbda418e8a73e809, type: 2}

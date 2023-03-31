@@ -6,20 +6,17 @@ using FSM;
 public class RoomBotController : Controller
 {
     #region Params
-    [Header("Movement Parameters")]
     public Vector3[] pos;
-    public RoomBotScriptableObject roomBotSO;
 
-    [HideInInspector] public Rigidbody rb_;
-    [HideInInspector] public Light light_;
+    [HideInInspector] public Light light_ { private set; get; }
 
+    //Movement
     [HideInInspector] public Quaternion lookRotation;
     [HideInInspector] public Vector3 dir;
     [HideInInspector] public int index = 1;
 
+    //Collision
     [HideInInspector] public bool isCollinding;
-
-    public float cooldownMax;
 
     [HideInInspector] public float cooldown;
     [HideInInspector] public float timer;
@@ -39,7 +36,6 @@ public class RoomBotController : Controller
 
     public override void Start()
     {
-        rb_ = GetComponent<Rigidbody>();
         light_ = GetComponentInChildren<Light>();
 
         base.Start();

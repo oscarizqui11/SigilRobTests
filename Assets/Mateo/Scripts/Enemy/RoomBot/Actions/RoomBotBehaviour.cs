@@ -7,28 +7,23 @@ public class RoomBotBehaviour : RoomBotCollisionBehaviour
 {
     public override void ExtraAction(Collider[] colliders, RoomBotController roomBotController)
     {
-        if (0 < colliders.Length)
+        if (!roomBotController.isCollinding)
         {
-            if (!roomBotController.isCollinding)
+            if (!roomBotController.NotActive)
             {
-                if (!roomBotController.NotActive)
-                {
-                    roomBotController.NotActive = true;
-                    roomBotController.timer = roomBotController.cooldownMax / 8;
-                    roomBotController.light_.color = roomBotController.roomBotSO.Color;
-                }
-                else
-                {
-                    roomBotController.NotActive = false;
-                    roomBotController.cooldown = roomBotController.cooldownMax;
-                    roomBotController.light_.enabled = true;
-                    roomBotController.light_.color = Color.red;
-                }
+                roomBotController.NotActive = true;
+                roomBotController.timer = cooldownMax / 8;
+                roomBotController.light_.color = color;
             }
-
-            roomBotController.isCollinding = true;
+            else
+            {
+                roomBotController.NotActive = false;
+                roomBotController.cooldown = cooldownMax;
+                roomBotController.light_.enabled = true;
+                roomBotController.light_.color = Color.red;
+            }
         }
-        else
-            roomBotController.isCollinding = false;
+
+        roomBotController.isCollinding = true;
     }
 }
