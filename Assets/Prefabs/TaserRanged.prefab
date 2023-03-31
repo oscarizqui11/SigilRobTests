@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7824381705848018313}
   - component: {fileID: 8518024278088159846}
   - component: {fileID: 1262038998191155436}
-  - component: {fileID: 302947744182093176}
   - component: {fileID: 8873316969600550497}
+  - component: {fileID: 5780907840486200312}
   m_Layer: 0
   m_Name: TaserRanged
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2464052340893970396
 MeshFilter:
@@ -112,19 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d613f2ec35f5340ab3a35df9626c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &302947744182093176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3804910434322641677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1a9c81e956dfc45b1dd5b36778e75d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 3
 --- !u!54 &8873316969600550497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,3 +128,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5780907840486200312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804910434322641677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7463f42b9e25440ab4eaada1ea50cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 3

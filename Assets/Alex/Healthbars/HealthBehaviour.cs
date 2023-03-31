@@ -28,8 +28,8 @@ public class HealthBehaviour : Action
     [SerializeField]
     private float autoSubstractVelocity;
 
-    [SerializeField]
-    private bool curation;
+    /*[SerializeField]
+    private bool curation;*/
 
     [Header("La bateria se consume sola")]
     [SerializeField]
@@ -42,13 +42,13 @@ public class HealthBehaviour : Action
         playerController = (PlayerController)controller;
 
         playerController.battery = maxBattery;
-        curation = false;
+        playerController.SetAutoCuration(false);
     }
 
     public override void Act(Controller controller)
     {
         //Variables
-        if (curation)
+        if (playerController.GetAutoCuration())
         {
             playerController.battery += Time.fixedDeltaTime * (maxBattery / rechargeDuration);
         }
@@ -90,7 +90,7 @@ public class HealthBehaviour : Action
     }
 
 
-    public void SubstractHealth(int substract)
+    /*public void SubstractHealth(int substract)
     {
         damageAcumulation += substract;
         damageAcumulationCount += substractVelocity;
@@ -105,5 +105,5 @@ public class HealthBehaviour : Action
     public void SetAutoCuration(bool setCuration)
     {
         curation = setCuration;
-    }
+    }*/
 }

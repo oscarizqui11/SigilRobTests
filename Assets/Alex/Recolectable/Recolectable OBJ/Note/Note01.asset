@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025b1fe59687dc47b8d3651bdf7869e, type: 3}
-  m_Name: AcHealthBehaviour
+  m_Script: {fileID: 11500000, guid: 7ace21ece9ecdbf4e81ed4ef602f3275, type: 3}
+  m_Name: Note01
   m_EditorClassIdentifier: 
-  maxBattery: 100
-  healDuration: 1
-  rechargeDuration: 3
-  substractVelocity: 20
-  autoSubstractVelocity: 20
-  autoConsum: 1
+  active: 0
+  name: Note 01
+  description: 
+  ID: 1
+  background: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  collected: 0

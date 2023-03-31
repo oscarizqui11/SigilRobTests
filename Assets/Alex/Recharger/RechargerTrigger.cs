@@ -6,8 +6,8 @@ public class RechargerTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.TryGetComponent<HealthBehaviour>(out HealthBehaviour h));
-        if(other.TryGetComponent<HealthBehaviour>(out HealthBehaviour healthy))
+        //Debug.Log(other.gameObject.TryGetComponent<HealthBehaviour>(out HealthBehaviour h));
+        if(other.TryGetComponent<PlayerController>(out PlayerController healthy))
         {
             healthy.SetAutoCuration(true);
         }
@@ -15,7 +15,7 @@ public class RechargerTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<HealthBehaviour>(out HealthBehaviour healthy))
+        if (other.TryGetComponent<PlayerController>(out PlayerController healthy))
         {
             healthy.SetAutoCuration(false);
         }

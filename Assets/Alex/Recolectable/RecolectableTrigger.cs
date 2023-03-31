@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RecolectableTrigger : MonoBehaviour
 {
 
-    private bool colectable;
+    private bool colectable = false;
+    public GameObject panel;
+    public GameObject noteComands;
+    public NotesScript note;
+
+    public InputAction collectAction;
+
+    private void OnEnable()
+    {
+        collectAction.Enable();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pulsa E para recojer");
         //Aplicar shader
         colectable = true;
     }
@@ -19,15 +31,12 @@ public class RecolectableTrigger : MonoBehaviour
         colectable = false;
     }
 
-    private void Start()
-    {
-        colectable = false;
-    }
-
     private void Update()
     {
-        if(colectable == true && Input.GetKeyDown(KeyCode.E))
+        if(colectable == true && collectAction.triggered)
         {
+            noteComands.GetComponent<NotesComands>().OpenNote(note, false);
+            note.collected = true;
             Destroy(gameObject);
         }
     }

@@ -9,35 +9,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c3c2efb7d50cf40aac365f6eeda6e3, type: 3}
-  m_Name: AcDashBehaviour
+  m_Script: {fileID: 11500000, guid: f3ff6b1593b71a342a36f315ff936562, type: 3}
+  m_Name: EvaluateShootInput3rdPerson
   m_EditorClassIdentifier: 
-  dashForce: 3
-  dashCd: 1
-  dashDuration: 0.25
-  batterySubstraction: 15
-  dashAction:
-    m_Name: Dash
+  isRanged: 0
+  shootingAction:
+    m_Name: Shooting
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 28bfa599-74ba-4385-a1d8-9ebb800b01b5
+    m_Id: b7f9ee7d-d1d7-457b-8355-e7bca8245345
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: e5deb32b-8498-40a8-84c7-642f5ced876f
-      m_Path: <Mouse>/rightButton
+      m_Id: a1dc8933-42a6-4b28-9691-7caf21d441cf
+      m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Dash
+      m_Action: Shooting
       m_Flags: 0
     - m_Name: 
-      m_Id: 7b39e149-99c6-4424-a20a-805ad70cf166
-      m_Path: <Gamepad>/rightShoulder
+      m_Id: f4530096-000c-4532-ba95-b6e2782337b0
+      m_Path: <XInputController>/buttonWest
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Dash
+      m_Action: Shooting
       m_Flags: 0
     m_Flags: 0

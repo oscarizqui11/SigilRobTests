@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShootingBehaviour : MonoBehaviour
+public class ShootingBhFSM : MonoBehaviour
 {
     public float cadency;
     public string meleeBullet;
@@ -16,26 +16,31 @@ public class ShootingBehaviour : MonoBehaviour
     public int energyCost = 0;
     public MyIntEvent onShoot;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
+    }*/
+
+    private void Start()
+    {
+        time = cadency;
     }
 
-    public void Shoot()
+    public void Shoot(bool isRanged)
     {
-         if(time >= cadency)
-         {
+        if (time >= cadency)
+        {
             GameObject newBullet;
 
-            if (Camera.main.TryGetComponent<CameraController>(out CameraController cam) && cam.GetIsFirstPerson())
+            if (isRanged)
             {
                 newBullet = PoolingManager.Instance.GetPooledObject(rangedBullet);
 
-                newBullet.transform.position = cam.transform.position + cam.transform.rotation * gunPosition;
-                newBullet.transform.rotation = cam.transform.rotation;
+                newBullet.transform.position = Camera.main.transform.position + Camera.main.transform.rotation * gunPosition;
+                newBullet.transform.rotation = Camera.main.transform.rotation;
             }
             else
             {
@@ -44,11 +49,13 @@ public class ShootingBehaviour : MonoBehaviour
                 newBullet.transform.position = transform.position + transform.rotation * gunPosition;
                 newBullet.transform.rotation = transform.rotation;
             }
-            
+
             newBullet.SetActive(true);
             onShoot.Invoke(energyCost);
+            GetComponent<PlayerController>().battery -= energyCost;
             time = 0;
-         }
+
+        }
     }
 
     private void FixedUpdate()

@@ -32,6 +32,9 @@ public class PlayerController : Controller
     public Renderer rende;
 
     public float battery;
+
+    [SerializeField]
+    private bool curation;
     
     public PlayerState playerState;
     #endregion
@@ -60,5 +63,14 @@ public class PlayerController : Controller
     public override void Update()
     {
         base.Update();
+    }
+
+    public void SetAutoCuration(bool cur)
+    {
+        curation = cur;
+    }
+    public bool GetAutoCuration()
+    {
+        return curation;
     }
 }
