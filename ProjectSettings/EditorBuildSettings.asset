@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/OscarWhiteBox.unity
+    guid: afefffff8671bbe4c95f0c705a933237
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6f46c0cf5664a624fb9cfb94f83efea2, type: 2}
