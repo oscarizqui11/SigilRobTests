@@ -1,0 +1,34 @@
+{
+    "name": "TestControls",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "496754f4-5276-4ec9-a1a9-efcc30ce1c19",
+            "actions": [
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "f366a433-28f2-4080-a627-aab49e7ab099",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f18ca72-5c34-43ff-85a9-ef1f31b25368",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
