@@ -1595,8 +1595,9 @@ GameObject:
   - component: {fileID: 7959339814923765736}
   - component: {fileID: 7959339814923765739}
   - component: {fileID: 7959339814923765738}
+  - component: {fileID: 543554407}
   m_Layer: 0
-  m_Name: Ta
+  m_Name: Ta.Ma FSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1609,7 +1610,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7112354472261580521}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000035762784}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 5.699158, y: 5.007, z: -4.753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1639,7 +1640,7 @@ Transform:
   - {fileID: 628885385422482293}
   - {fileID: 1065948165462678796}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!33 &6795970923908342774
 MeshFilter:
@@ -1737,9 +1738,12 @@ MonoBehaviour:
   allStates:
   - {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
   - {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
+  - {fileID: 11400000, guid: 92e0493fcc4c04f4e8b4c29f791370be, type: 2}
   ActiveObject: 0
   rende: {fileID: 0}
   battery: 0
+  curation: 0
+  autoConsum: 0
   playerState: 0
   hasReceivedEvent: 1
 --- !u!114 &7959339814923765737
@@ -1794,7 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7463f42b9e25440ab4eaada1ea50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 3
+  velocity: 2
 --- !u!114 &7959339814923765738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1812,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepHeight: 0.5
+--- !u!114 &543554407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112354472261580521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebc17f34858c4744b47ab8c17302ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cadency: 0.6
+  meleeBullet: TaserMelee
+  rangedBullet: TaserRanged
+  gunPosition: {x: 0, y: 0.05, z: 0.5}
+  energyCost: 15
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7510053668765476463
 GameObject:
   m_ObjectHideFlags: 0

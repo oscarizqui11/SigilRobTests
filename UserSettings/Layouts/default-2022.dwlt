@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 300}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 86
+  controlID: 20
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,8 +216,8 @@ MonoBehaviour:
     y: 0
     width: 774.6667
     height: 514.6667
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -393,22 +393,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: 57
   m_LastProjectPath: D:\OscarIzquierdo\SigilRobTests
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d48f0000
-    m_LastClickedID: 36820
-    m_ExpandedIDs: 00000000d48f0000089000000c9000000e9000001090000014900000329000006c65030000ca9a3bffffff7f
+    m_SelectedIDs: 6e890000
+    m_LastClickedID: 35182
+    m_ExpandedIDs: 000000002a89000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -436,7 +436,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d48f0000
+    m_ExpandedIDs: 000000002a890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -525,18 +525,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9c97feff20cafeffdafdfeff3400ffff94c4ffffacf5fffffa570000a05900001a350600c0840600
+      m_ExpandedIDs: 3c81feff84c1feffcedafeff2edbfeffae25ffffb865ffff82a5ffff2efbffff2a4c0100e060010036220200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: CamBot (1)
-        m_OriginalName: CamBot (1)
+        m_Name: zona generador
+        m_OriginalName: zona generador
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -58794
+        m_UserData: 85784
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -835,9 +835,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6618643, y: 0.70379686, z: -9.960873}
+    m_Target: {x: -24.38563, y: 2.0915103, z: 2.2323775}
     speed: 2
-    m_Value: {x: -0.6618643, y: 0.70379686, z: -9.960873}
+    m_Value: {x: -24.38563, y: 2.0915103, z: 2.2323775}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -883,13 +883,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.18158855, y: 0.6132596, z: -0.14634903, w: 0.7551028}
+    m_Target: {x: -0.14811656, y: 0.16563445, z: -0.02547843, w: -0.9750361}
     speed: 2
-    m_Value: {x: 0.18152864, y: 0.6130573, z: -0.14630075, w: 0.7548537}
+    m_Value: {x: -0.14810148, y: 0.16411282, z: -0.025247166, w: -0.9749336}
   m_Size:
-    m_Target: 7.333691
+    m_Target: 10
     speed: 2
-    m_Value: 7.333691
+    m_Value: 9.999991
   m_Ortho:
     m_Target: 0
     speed: 2
