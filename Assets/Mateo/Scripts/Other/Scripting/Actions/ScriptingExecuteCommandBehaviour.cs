@@ -8,13 +8,10 @@ public class ScriptingExecuteCommandBehaviour : Action
 {
     private ScriptingManager scriptingManager;
 
-    public override void Innit(Controller controller)
-    {
-        scriptingManager = (ScriptingManager)controller;
-    }
-
     public override void Act(Controller controller)
     {
+        scriptingManager = (ScriptingManager)controller;
+
         Script s = scriptingManager._script;
         int index = scriptingManager.index;
 

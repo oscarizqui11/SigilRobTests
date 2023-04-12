@@ -10,15 +10,10 @@ public abstract class RoomBotCollisionBehaviour : Action
     private Vector3 boxLocation => roomBotSO.BoxLoc;
     private Vector3 boxSize => roomBotSO.BoxSize;
 
-    protected Color color => roomBotSO.Color;
     private LayerMask playerMask => roomBotSO.PlayerMask;
+    protected Color color => roomBotSO.Color;
 
     protected float cooldownMax => roomBotSO.CDMax;
-
-    public override void Innit(Controller controller)
-    {
-        
-    }
 
     public abstract void ExtraAction(Collider[] colliders, RoomBotController roomBotController);
 
@@ -38,13 +33,13 @@ public abstract class RoomBotCollisionBehaviour : Action
         {
             roomBotController.cooldown -= Time.fixedDeltaTime;
 
-            if (roomBotController.timer > 0)
-                roomBotController.timer -= Time.fixedDeltaTime;
-            else
+            if (roomBotController.timer < 0)
             {
                 roomBotController.light_.enabled = !roomBotController.light_.enabled;
                 roomBotController.timer = roomBotController.cooldown / 8;
             }
+            else
+                roomBotController.timer -= Time.fixedDeltaTime;
 
             if (roomBotController.cooldown <= 0)
             {

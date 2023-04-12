@@ -11,11 +11,6 @@ public class RoomBotMovementBehaviour : Action
     private float speed => roomBotSO.Speed;
     private float speedRotation => roomBotSO.SpeedRot;
 
-    public override void Innit(Controller controller)
-    {
-
-    }
-
     public override void Act(Controller controller)
     {
         RoomBotController roomBotController = (RoomBotController)controller;

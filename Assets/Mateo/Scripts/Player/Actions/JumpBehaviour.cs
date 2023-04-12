@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -10,13 +8,10 @@ public class JumpBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Innit(Controller controller)
-    {
-        playerController = (PlayerController)controller;
-    }
-
     public override void Act(Controller controller)
     {
+        playerController = (PlayerController)controller;
+
         if (Input.GetButtonDown("Jump"))
             playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
     }

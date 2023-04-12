@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -37,16 +35,18 @@ public class HealthBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Innit(Controller controller)
+    /*public override void Innit(Controller controller)
     {
         playerController = (PlayerController)controller;
 
         playerController.battery = maxBattery;
         curation = false;
-    }
+    }*/
 
     public override void Act(Controller controller)
     {
+        playerController = (PlayerController)controller;
+
         //Variables
         if (curation)
         {

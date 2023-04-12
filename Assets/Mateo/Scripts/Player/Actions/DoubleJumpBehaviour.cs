@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -13,13 +11,10 @@ public class DoubleJumpBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Innit(Controller controller)
-    {
-        playerController = (PlayerController)controller;
-    }
-
     public override void Act(Controller controller)
     {
+        playerController = (PlayerController)controller;
+
         if (PlayerStates.Grounded == playerController.playerState)
             DoubleJumpUsed = false;
 

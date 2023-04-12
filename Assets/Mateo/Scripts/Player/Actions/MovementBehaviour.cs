@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -13,13 +11,10 @@ public class MovementBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Innit(Controller controller)
-    {
-        playerController = (PlayerController)controller;
-    }
-
     public override void Act(Controller controller)
     {
+        playerController = (PlayerController)controller;
+
         if (Mathf.Abs(inputDir.x - Input.GetAxisRaw("Horizontal")) > playerController.inputChangeDif || Mathf.Abs(inputDir.y - Input.GetAxisRaw("Vertical")) > playerController.inputChangeDif)
         {
             inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -40,9 +35,7 @@ public class MovementBehaviour : Action
     public void MoveRB(Vector3 dir)
     {
         if (!WillCollide(dir))
-        {
             playerController._rb.MovePosition(playerController.transform.position + velocity * Time.fixedDeltaTime * dir);
-        }
     }
 
     private bool WillCollide(Vector3 dir)

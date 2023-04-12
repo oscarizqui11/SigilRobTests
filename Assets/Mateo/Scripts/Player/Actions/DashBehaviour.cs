@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -15,13 +13,10 @@ public class DashBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Innit(Controller controller)
-    {
-        playerController = (PlayerController)controller;
-    }
-
     public override void Act(Controller controller)
     {
+        playerController = (PlayerController)controller;
+
         if (DashCdTimer > 0)
             DashCdTimer -= Time.deltaTime;
 

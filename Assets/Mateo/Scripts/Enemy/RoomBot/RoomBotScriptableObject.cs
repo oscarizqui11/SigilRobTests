@@ -12,11 +12,11 @@ public class RoomBotScriptableObject : ScriptableObject
     public Vector3 BoxSize { get { return boxSize; } }
 
     public LayerMask PlayerMask { get { return playerMask; } }
+    public Color Color { get { return color; } }
 
     public float CDMax { get { return cooldownMax; } }
     public float Bounce { get { return bounce; } }
 
-    public Color Color { get { return color; } }
 
     [Header("Movement Parameters")]
     [SerializeField] private float speed;
@@ -28,8 +28,8 @@ public class RoomBotScriptableObject : ScriptableObject
     [SerializeField] private LayerMask playerMask;
 
     [Header("Reactivated Parameters")]
-    [SerializeField] protected float cooldownMax;
     [SerializeField] protected Color color;
+    [SerializeField] protected float cooldownMax;
 
     [Header("Special Parameters")]
     [SerializeField] private float bounce;
