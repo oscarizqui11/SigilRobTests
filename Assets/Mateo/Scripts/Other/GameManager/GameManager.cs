@@ -25,13 +25,11 @@ public class GameManager : Controller
 
     public override void Start()
     {
-        Controller[] tempContrlls = FindObjectsOfType<Controller>();
+        Controller[] tempCntrlls = FindObjectsOfType<Controller>();
 
-        for (int i = 0; i < tempContrlls.Length; i++)
-        {
-            if (tempContrlls[i] != this)
-                controllers.Add(tempContrlls[i]);
-        }
+        for (int i = 0; i < tempCntrlls.Length; i++)
+            if (tempCntrlls[i] != this)
+                controllers.Add(tempCntrlls[i]);
 
         base.Start();
     }

@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 349534905}
   - component: {fileID: 349534904}
   - component: {fileID: 349534903}
-  m_Layer: 16
+  m_Layer: 13
   m_Name: Pared_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &381033427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -721,14 +721,15 @@ GameObject:
   - component: {fileID: 559456683}
   - component: {fileID: 559456682}
   - component: {fileID: 559456685}
+  - component: {fileID: 559456687}
   - component: {fileID: 559456686}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559456680
 Transform:
   m_ObjectHideFlags: 0
@@ -906,17 +907,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 559456679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &559456687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559456679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: 1.8, y: 0.447, z: 4.332}
-  pointB: {x: 1.8, y: 0.7, z: 5}
+  pointB: {x: 1.8, y: 1.8, z: 4.9}
 --- !u!1 &568231538
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,14 +940,15 @@ GameObject:
   - component: {fileID: 568231542}
   - component: {fileID: 568231541}
   - component: {fileID: 568231544}
+  - component: {fileID: 568231546}
   - component: {fileID: 568231545}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &568231539
 Transform:
   m_ObjectHideFlags: 0
@@ -1114,17 +1126,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 568231538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &568231546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568231538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: 1.8, y: 1.157, z: 3.768}
-  pointB: {x: 1.8, y: 1.6, z: 4.2}
+  pointB: {x: 1.8, y: 0.3, z: 3.2}
 --- !u!1 &659953843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,14 +1159,15 @@ GameObject:
   - component: {fileID: 659953847}
   - component: {fileID: 659953846}
   - component: {fileID: 659953849}
+  - component: {fileID: 659953851}
   - component: {fileID: 659953850}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &659953844
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,17 +1345,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 659953843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &659953851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659953843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: -1.85, y: 0.507, z: 3.238}
-  pointB: {x: -1.85, y: 1, z: 3.238}
+  pointB: {x: -1.85, y: 1.69, z: 3.7}
 --- !u!1 &817701337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1626,7 @@ GameObject:
   - component: {fileID: 894123934}
   - component: {fileID: 894123933}
   - component: {fileID: 894123932}
-  m_Layer: 16
+  m_Layer: 14
   m_Name: Mirror (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1690,14 +1723,15 @@ GameObject:
   - component: {fileID: 933864267}
   - component: {fileID: 933864266}
   - component: {fileID: 933864269}
+  - component: {fileID: 933864271}
   - component: {fileID: 933864270}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &933864264
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,17 +1909,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 933864263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &933864271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933864263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: -1.85, y: 1.171, z: 4.887}
-  pointB: {x: -1.85, y: 0.6, z: 4}
+  pointB: {x: -1.85, y: 0.2, z: 3}
 --- !u!1 &950503095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,8 +2037,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1020490449}
   - component: {fileID: 1020490450}
-  - component: {fileID: 1020490452}
-  - component: {fileID: 1020490451}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -2037,35 +2079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cadb6c3c387f1641980de513ebf36b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserData: []
---- !u!114 &1020490451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020490448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mirrorLayer:
-    serializedVersion: 2
-    m_Bits: 16384
---- !u!114 &1020490452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020490448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1 &1067875801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,8 +2091,9 @@ GameObject:
   - component: {fileID: 1067875805}
   - component: {fileID: 1067875804}
   - component: {fileID: 1067875807}
+  - component: {fileID: 1067875809}
   - component: {fileID: 1067875808}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2263,17 +2277,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067875801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &1067875809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067875801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: 1.8, y: 0.925, z: 4.318}
-  pointB: {x: 1.8, y: 0.925, z: 3.39}
+  pointB: {x: 1.8, y: 0.4, z: 4.7}
 --- !u!1 &1100046539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,14 +2773,15 @@ GameObject:
   - component: {fileID: 1536670361}
   - component: {fileID: 1536670360}
   - component: {fileID: 1536670363}
+  - component: {fileID: 1536670365}
   - component: {fileID: 1536670364}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1536670358
 Transform:
   m_ObjectHideFlags: 0
@@ -2934,17 +2959,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536670357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &1536670365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536670357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: -1.85, y: 0.66400003, z: 3.517}
-  pointB: {x: -1.85, y: 0.66400003, z: 4}
+  pointB: {x: -1.85, y: 1.2, z: 4}
 --- !u!1 &1641665779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,8 +3523,9 @@ GameObject:
   - component: {fileID: 1928263489}
   - component: {fileID: 1928263488}
   - component: {fileID: 1928263491}
+  - component: {fileID: 1928263493}
   - component: {fileID: 1928263492}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,15 +3709,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928263485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &1928263493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928263485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: 1.8, y: 1.35, z: 3.15}
   pointB: {x: 1.8, y: 0.5, z: 3.15}
 --- !u!1 &2101127828
@@ -3696,14 +3742,15 @@ GameObject:
   - component: {fileID: 2101127832}
   - component: {fileID: 2101127831}
   - component: {fileID: 2101127834}
+  - component: {fileID: 2101127836}
   - component: {fileID: 2101127835}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2101127829
 Transform:
   m_ObjectHideFlags: 0
@@ -3881,14 +3928,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2101127828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36189706d1e3d644abad7e1e32870d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb5fd6ce26518840854282dc0e9a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 0
-  factor: 0
-  currentTime: 0
-  assignedPoint: 0
-  dir: {x: 0, y: 0, z: 0}
-  lr_: {fileID: 0}
+  mirrorLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+--- !u!114 &2101127836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101127828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a8c9d948b875a4fb0d66e8b784348b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
   pointA: {x: -1.85, y: 0.748, z: 4.222}
-  pointB: {x: -1.85, y: 1.2, z: 3.8}
+  pointB: {x: -1.85, y: 0.3, z: 3.1}

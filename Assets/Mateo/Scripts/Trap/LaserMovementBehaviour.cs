@@ -4,32 +4,45 @@ public class LaserMovementBehaviour : MonoBehaviour
 {
     [SerializeField] private float speed;
 
-    public void Movement(LaserData laserData)
+    #region Interporlation
+    private float totalTime;
+    private float factor;
+    private float currentTime;
+
+    private bool assignedPoint;
+
+    private Vector3 dir;
+
+    [SerializeField] private Vector3 pointA;
+    [SerializeField] private Vector3 pointB;
+    #endregion
+
+    public void Movement() 
     {
-        if (!laserData.assignedPoint)
+        if (!assignedPoint)
         {
-            float dist = Vector3.Distance(laserData.pointA, laserData.pointB);
+            float dist = Vector3.Distance(pointA, pointB);
 
-            laserData.totalTime = dist / speed;
-            laserData.assignedPoint = true;
+            totalTime = dist / speed;
+            assignedPoint = true;
 
-            laserData.dir = (laserData.pointB - laserData.pointA).normalized;
+            dir = (pointB - pointA).normalized;
         }
 
-        laserData.currentTime += Time.deltaTime;
-        laserData.factor = laserData.currentTime / laserData.totalTime;
+        currentTime += Time.deltaTime;
+        factor = currentTime / totalTime;
 
-        Vector3 valueIPos = laserData.pointA + (laserData.pointB - laserData.pointA) * laserData.factor;
-        laserData.transform.position = valueIPos;
+        Vector3 valueIPos = pointA + (pointB - pointA) * factor;
+        transform.position = valueIPos;
 
-        if (laserData.currentTime > laserData.totalTime)
+        if (currentTime > totalTime)
         {
-            laserData.currentTime = 0;
-            laserData.assignedPoint = false;
+            currentTime = 0;
+            assignedPoint = false;
 
-            var pointC = laserData.pointA;
-            laserData.pointA = laserData.pointB;
-            laserData.pointB = pointC;
+            var pointC = pointA;
+            pointA = pointB;
+            pointB = pointC;
         }
     }
 }

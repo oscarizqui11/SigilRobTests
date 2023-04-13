@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-    private List<LaserData> laserData = new List<LaserData>();
+    private List<Transform> laserData = new List<Transform>();
 
-    private LaserMovementBehaviour laserMovement;
-    private LaserActionBehaviour laserAction;
+    private List<LaserMovementBehaviour> laserMovementBehaviours = new List<LaserMovementBehaviour>();
+    private List<LaserActionBehaviour> laserActionBehaviours = new List<LaserActionBehaviour>();
 
     private void Start()
     {
-        laserMovement = GetComponent<LaserMovementBehaviour>();
-        laserAction = GetComponent<LaserActionBehaviour>();
-
         foreach(Transform child in transform)
-            laserData.Add(child.GetComponent<LaserData>());
+            if (child.GetComponent<LaserMovementBehaviour>() && child.GetComponent<LaserActionBehaviour>())
+                laserData.Add(child);
 
         for (int i = 0; i < laserData.Count; i++)
-            laserData[i].lr_ = laserData[i].GetComponent<LineRenderer>();
+        {
+            laserMovementBehaviours.Add(laserData[i].GetComponent<LaserMovementBehaviour>());
+            laserActionBehaviours.Add(laserData[i].GetComponent<LaserActionBehaviour>());
+
+            laserActionBehaviours[i].lr_ = laserData[i].GetComponent<LineRenderer>();
+        }
     }
 
     private void Update()
     {
         for (int i = 0; i < laserData.Count; i++)
         {
-            laserMovement.Movement(laserData[i]);
-            laserAction.Action(laserData[i]);
+            laserMovementBehaviours[i].Movement();
+            laserActionBehaviours[i].DisplayLaser();
         }
     }
 }
