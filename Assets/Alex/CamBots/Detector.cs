@@ -10,5 +10,6 @@ public class Detector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         cambot.persecution = true;
+        cambot.target = other.transform;
     }
 }

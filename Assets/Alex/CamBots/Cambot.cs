@@ -24,14 +24,15 @@ public class Cambot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        direction = target.position - transform.position;
         DP = defaultPosition - transform.position;
 
         if (persecution)
         {
+            direction = target.position - transform.position;
             time = 0;
             RaycastHit hit;
             int layerMask = LayerMask.GetMask("Ignore Raycast");
+
             if (Physics.Raycast(transform.position, direction.normalized, out hit, maxDistance, ~layerMask))
             {
                 if (hit.collider.CompareTag("Player"))
@@ -77,10 +78,5 @@ public class Cambot : MonoBehaviour
         cone.SetActive(true);
         transform.position = defaultPosition;
         transform.LookAt(cone.transform);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, target.position);
     }
 }
