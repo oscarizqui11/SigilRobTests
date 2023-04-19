@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: RoomBotInactive
   m_EditorClassIdentifier: 
   updateActions: []
-  fixedUpdateActions:
-  - {fileID: 11400000, guid: 8f7c8f1fddb037b46a979f3d5b9bccef, type: 2}
+  fixedUpdateActions: []
   transitions:
   - decision: {fileID: 11400000, guid: 9b077eb5b4774bd4c9626d41904b8044, type: 2}
     trueState: {fileID: 11400000, guid: 8979de118252efa4d861585f42eac209, type: 2}

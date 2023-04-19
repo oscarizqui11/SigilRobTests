@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -8,36 +6,36 @@ public class RoomBotController : Controller
     #region Params
     public Vector3[] pos;
 
-    [HideInInspector] public Light light_ { private set; get; }
+    public Light light_ { private set; get; }
 
     //Movement
-    [HideInInspector] public Quaternion lookRotation;
-    [HideInInspector] public Vector3 dir;
-    [HideInInspector] public int index = 1;
+    public int index;
+    public Quaternion lookRotation;
 
     //Collision
-    [HideInInspector] public bool isCollinding;
+    public bool isCollinding;
 
-    [HideInInspector] public float cooldown;
-    [HideInInspector] public float timer;
+    public float cooldown;
+    public float timer;
 
-    [HideInInspector] public bool NotActive;
+    public bool NotActive;
     #endregion
 
     #region Interpolation
-    [HideInInspector] public float totalTime;
-    [HideInInspector] public float currentTime;
+    public float totalTime;
+    public float currentTime;
 
-    [HideInInspector] public bool assignedPoint;
+    public bool assignedPoint;
 
-    [HideInInspector] public Vector3 pointA;
-    [HideInInspector] public Vector3 pointB;
+    public Vector3 pointA;
+    public Vector3 pointB;
     #endregion
 
     public override void Start()
     {
         light_ = GetComponentInChildren<Light>();
 
+        index = 1;
         base.Start();
     }
 }

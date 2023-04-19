@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace FSM
@@ -18,8 +16,8 @@ namespace FSM
 
         public void UpdateState(Controller controller)
         {
-            DoActions(controller);
             CheckTransitions(controller);
+            DoActions(controller);
         }
 
         public void FixedUpdateState(Controller controller)

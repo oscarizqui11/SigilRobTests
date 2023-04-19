@@ -31,8 +31,6 @@ public class ScriptingManager : Controller
     {
         if (index >= _script.commands.Length)
         {
-            GameManager._gameManager.gameState = 0;
-
             index = 0;
             waiting = false;
         }

@@ -283,7 +283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &349534902
 GameObject:
@@ -303,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &349534903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &381033427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1345,7 +1345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &817701339
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1424,11 +1424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875704336048f8a46939e94a516d5815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
   allStates:
   - {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}
   - {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
-  type: 0
   isFixedUpdate: 1
   rende: {fileID: 355600133}
   playerState: 0
@@ -1616,7 +1614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &894123932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1932,7 +1930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &950503096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2027,7 +2025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1020490449
 Transform:
   m_ObjectHideFlags: 0
@@ -2395,7 +2393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142903300
 Transform:
   m_ObjectHideFlags: 0
@@ -2410,8 +2408,8 @@ Transform:
   m_Children:
   - {fileID: 1894471492}
   - {fileID: 1785180905}
-  m_Father: {fileID: 1339550281}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193257405
 GameObject:
@@ -2605,7 +2603,7 @@ RectTransform:
   m_Children:
   - {fileID: 355600132}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2646,7 +2644,6 @@ Transform:
   - {fileID: 381033430}
   - {fileID: 894123935}
   - {fileID: 1020490449}
-  - {fileID: 1142903300}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3028,7 +3025,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1785180900
 GameObject:
@@ -3042,13 +3039,14 @@ GameObject:
   - component: {fileID: 1785180904}
   - component: {fileID: 1785180903}
   - component: {fileID: 1785180902}
+  - component: {fileID: 1785180906}
   m_Layer: 8
   m_Name: Roombot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1785180902
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3130,6 +3128,38 @@ Transform:
   m_Father: {fileID: 1142903300}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1785180906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785180900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adc1536d4bc4384781f938b16825bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allStates:
+  - {fileID: 11400000, guid: 53a30b8015768a64fbda418e8a73e809, type: 2}
+  - {fileID: 11400000, guid: 096f2b832c114ce4abdcb8dc9c11c35b, type: 2}
+  isFixedUpdate: 1
+  pos:
+  - {x: -3, y: 0.1, z: 3}
+  - {x: -3, y: 0.1, z: -3}
+  - {x: 3, y: 0.1, z: -3}
+  - {x: 3, y: 0.1, z: 3}
+  index: 1
+  lookRotation: {x: 0, y: 0, z: 0, w: 0}
+  isCollinding: 0
+  cooldown: 0
+  timer: 0
+  NotActive: 0
+  totalTime: 0
+  currentTime: 0
+  assignedPoint: 0
+  pointA: {x: 0, y: 0, z: 0}
+  pointB: {x: 0, y: 0, z: 0}
 --- !u!1 &1816662283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,6 +3364,7 @@ GameObject:
   - component: {fileID: 1894471491}
   - component: {fileID: 1894471490}
   - component: {fileID: 1894471497}
+  - component: {fileID: 1894471498}
   m_Layer: 8
   m_Name: Roombot
   m_TagString: Untagged
@@ -3400,7 +3431,7 @@ Transform:
   m_GameObject: {fileID: 1894471489}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2, y: 0.1, z: -2}
-  m_LocalScale: {x: 0.6999999, y: 0.1, z: 0.6999999}
+  m_LocalScale: {x: 0.7, y: 0.1, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 302111271}
@@ -3422,6 +3453,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1894471498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894471489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adc1536d4bc4384781f938b16825bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allStates:
+  - {fileID: 11400000, guid: 8979de118252efa4d861585f42eac209, type: 2}
+  - {fileID: 11400000, guid: d0566eb0756a32a499968f0f27e75bc3, type: 2}
+  isFixedUpdate: 1
+  pos:
+  - {x: -2, y: 0.1, z: -2}
+  - {x: 2, y: 0.1, z: -2}
+  - {x: 2, y: 0.1, z: 2}
+  - {x: -2, y: 0.1, z: 2}
+  index: 0
+  lookRotation: {x: 0, y: 0, z: 0, w: 0}
+  isCollinding: 0
+  cooldown: 0
+  timer: 0
+  NotActive: 0
+  totalTime: 0
+  currentTime: 0
+  assignedPoint: 0
+  pointA: {x: 0, y: 0, z: 0}
+  pointB: {x: 0, y: 0, z: 0}
 --- !u!1 &1928263485
 GameObject:
   m_ObjectHideFlags: 0

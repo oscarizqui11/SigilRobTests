@@ -1,6 +1,3 @@
-using FSM;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "FSM/RoomBot/Action/RoomBotBehaviour", fileName = "AcRoomBotBehaviour")]

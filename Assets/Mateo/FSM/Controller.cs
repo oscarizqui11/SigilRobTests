@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace FSM
@@ -7,10 +5,8 @@ namespace FSM
     public abstract class Controller : MonoBehaviour
     {
         [Header("FSM")]
-        public State currentState;
-        public State[] allStates;
-
-        public int type;
+        [SerializeField] private State[] allStates;
+        private State currentState;
 
         [SerializeField] private bool isFixedUpdate;
 

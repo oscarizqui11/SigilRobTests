@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
@@ -30,12 +28,12 @@ public class RoomBotMovementBehaviour : Action
             roomBotController.totalTime = dist / speed;
             roomBotController.assignedPoint = true;
 
-            roomBotController.dir = (roomBotController.pointB - roomBotController.pointA).normalized;
-            roomBotController.lookRotation = Quaternion.LookRotation(roomBotController.dir);
+            var dir = (roomBotController.pointB - roomBotController.pointA).normalized;
+            roomBotController.lookRotation = Quaternion.LookRotation(dir);
         }
 
         roomBotController.currentTime += Time.deltaTime;
-        float factor = roomBotController.currentTime / roomBotController.totalTime;
+        var factor = roomBotController.currentTime / roomBotController.totalTime;
 
         Vector3 valueIPos = roomBotController.pointA + (roomBotController.pointB - roomBotController.pointA) * factor;
         transform.position = valueIPos;
