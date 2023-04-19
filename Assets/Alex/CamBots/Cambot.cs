@@ -13,6 +13,8 @@ public class Cambot : MonoBehaviour
     private Vector3 defaultPosition;
     private Vector3 DP;
     private MovementBH mv;
+    public float backTime;
+    private float time;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class Cambot : MonoBehaviour
 
         if (persecution)
         {
+            time = 0;
             RaycastHit hit;
             int layerMask = LayerMask.GetMask("Ignore Raycast");
             if (Physics.Raycast(transform.position, direction.normalized, out hit, maxDistance, ~layerMask))
@@ -48,8 +51,13 @@ public class Cambot : MonoBehaviour
         }
         else
         {
-            UnFollow();
+            time = time + Time.deltaTime;
+            if(time >= backTime)
+            {
+                UnFollow();
+            }
         }
+        
     }
 
     private void Follow()

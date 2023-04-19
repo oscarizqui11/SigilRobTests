@@ -846,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7638096280131972179, guid: 4f73a726412b7944fb8e58da422633b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 1.372
       objectReference: {fileID: 0}
     - target: {fileID: 7638096280131972179, guid: 4f73a726412b7944fb8e58da422633b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3286,7 +3286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998099337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 2.92, z: 1.38}
+  m_LocalPosition: {x: -2.75, y: 2.92, z: -1.65}
   m_LocalScale: {x: 0.58, y: 5.21, z: 5.13}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3512,10 +3512,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 636769113743871628, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.86
-      objectReference: {fileID: 0}
     - target: {fileID: 1287697098422637142, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3526,7 +3522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287697098422637142, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.088
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1287697098422637142, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3563,10 +3559,6 @@ PrefabInstance:
     - target: {fileID: 1287697098422637143, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
       propertyPath: m_Name
       value: CamBot_Enemy_Follow
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247372791705792420, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
-      propertyPath: velocity
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247372791705792421, guid: 149c33ac86c09d94085e3ce8d06fa01a, type: 3}
       propertyPath: target

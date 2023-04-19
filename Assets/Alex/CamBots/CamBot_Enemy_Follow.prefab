@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636769113743871629}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.047633193, y: -1.451, z: -2.82}
+  m_LocalPosition: {x: 0.047633193, y: -1.451, z: -2.86}
   m_LocalScale: {x: 3, y: 10, z: 0.7499998}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -469,6 +469,7 @@ MonoBehaviour:
   maxDistance: 10
   cone: {fileID: 919445189711531290}
   defaultRotation: {x: 0, y: 180, z: 0}
+  backTime: 2
 --- !u!114 &7247372791705792420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7463f42b9e25440ab4eaada1ea50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 1
+  velocity: 2.5
 --- !u!54 &7247372791705792423
 Rigidbody:
   m_ObjectHideFlags: 0
