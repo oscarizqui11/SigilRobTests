@@ -1,5 +1,7 @@
 using UnityEngine;
 using FSM;
+using UnityEngine.InputSystem;
+using SRobEngine.SRobPlayer;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/JumpBehaviour", fileName = "AcJumpBehaviour")]
 public class JumpBehaviour : Action
@@ -8,11 +10,20 @@ public class JumpBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Act(Controller controller)
+    public InputAction jumpAction;
+
+    public override void Innit(Controller controller)
     {
         playerController = (PlayerController)controller;
+        jumpAction.Enable();
+    }
 
-        if (Input.GetButtonDown("Jump"))
+    public override void Act(Controller controller)
+    {
+        if(jumpAction.triggered)
+        {
             playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
+            playerController.playerState = PlayerState.Airborne;
+        }
     }
 }

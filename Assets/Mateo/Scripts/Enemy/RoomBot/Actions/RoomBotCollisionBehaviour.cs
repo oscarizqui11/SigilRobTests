@@ -17,6 +17,10 @@ public abstract class RoomBotCollisionBehaviour : Action
 
     public abstract void ExtraAction(Collider[] colliders, RoomBotController roomBotController);
 
+    public override void Innit(Controller controller)
+    {
+    }
+
     public override void Act(Controller controller)
     {
         RoomBotController roomBotController = (RoomBotController)controller;

@@ -1,7 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FSM;
+using SRobEngine.SRobPlayer;
+
+namespace SRobEngine
+{
+    namespace SRobPlayer
+    {
+        public enum PlayerState
+        {
+            Grounded,
+            Airborne,
+            Ramming,
+            Shooting,
+            Holding,
+            Healing,
+            FirstPerson
+        };
+    }
+}
 
 public class PlayerController : Controller
 {
@@ -9,15 +25,21 @@ public class PlayerController : Controller
     public static PlayerController _playerController { get; private set; }
     public Rigidbody _rb { get; private set; }
     public CapsuleCollider _capscol { get; private set; }
+    public MovementBH _mb { get; private set; }
+    public JetpackScript _jp { get; private set; }
 
     public Renderer rende;
 
+    public PlayerState playerState;
+
     public float battery;
 
-    [Range(0,1)]
-    public float inputChangeDif;
+    [SerializeField]
+    private bool curation;
+    [SerializeField]
+    private bool autoConsum;
 
-    [HideInInspector] public PlayerStates playerState;
+    private Vector3 movDir;
     #endregion
 
     //Events
@@ -36,7 +58,36 @@ public class PlayerController : Controller
     {
         _rb = GetComponent<Rigidbody>();
         _capscol = GetComponent<CapsuleCollider>();
+        _mb = GetComponent<MovementBH>();
+        _jp = GetComponent<JetpackScript>();
 
         base.Start();
+    }
+
+    public void SetDir(Vector3 dir)
+    {
+        movDir = dir;
+    }
+    public Vector3 GetDir()
+    {
+        return movDir;
+    }
+
+    public void SetAutoCuration(bool cur)
+    {
+        curation = cur;
+    }
+    public bool GetAutoCuration()
+    {
+        return curation;
+    }
+
+    public void SetAutoConsumption(bool cons)
+    {
+        autoConsum = cons;
+    }
+    public bool GetAutoConsumption()
+    {
+        return autoConsum;
     }
 }

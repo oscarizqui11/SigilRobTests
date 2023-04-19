@@ -16,6 +16,9 @@ namespace FSM
 
         virtual public void Start()
         {
+            for (int i = 0; i < allStates.Length; i++)
+                allStates[i].StartState(this);
+
             currentState = allStates[0];
         }
 

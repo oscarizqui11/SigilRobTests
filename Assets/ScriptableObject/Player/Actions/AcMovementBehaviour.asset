@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1a9c81e956dfc45b1dd5b36778e75d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3504cabea5b8f004593fe1f1fbaf0571, type: 3}
   m_Name: AcMovementBehaviour
   m_EditorClassIdentifier: 
-  velocity: 2

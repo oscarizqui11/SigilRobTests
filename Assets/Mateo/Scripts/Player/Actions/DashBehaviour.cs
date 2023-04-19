@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using FSM;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/DashBehaviour", fileName = "AcDashBehaviour")]
 public class DashBehaviour : Action
@@ -13,14 +16,20 @@ public class DashBehaviour : Action
 
     private PlayerController playerController;
 
-    public override void Act(Controller controller)
+    public InputAction dashAction;
+
+    public override void Innit(Controller controller)
     {
         playerController = (PlayerController)controller;
+        dashAction.Enable();
+    }
 
+    public override void Act(Controller controller)
+    {
         if (DashCdTimer > 0)
             DashCdTimer -= Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(1))
+        if (dashAction.triggered && playerController._jp.GetJetpackActive())
         {
             if (DashCdTimer > 0)
                 return;

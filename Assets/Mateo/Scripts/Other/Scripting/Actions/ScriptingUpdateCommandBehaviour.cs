@@ -9,6 +9,10 @@ public class ScriptingUpdateCommandBehaviour : Action
     private ScriptingManager scriptingManager;
     private bool boolean;
 
+    public override void Innit(Controller controller)
+    {
+    }
+
     public override void Act(Controller controller)
     {
         scriptingManager = (ScriptingManager)controller;

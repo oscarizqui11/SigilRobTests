@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBattery: 100
   healDuration: 1
-  rechargeDuration: 3
-  substractVelocity: 10
-  autoSubstractVelocity: 20
-  curation: 0
-  autoConsum: 0
+  rechargeDuration: 1
+  substractVelocity: 20
+  autoSubstractVelocity: 2
