@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Mina : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject explosionParticles;
+    public int damage;
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        //Explode();
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<LiveSystem>().TakeDamage(damage);
+            Explode();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Explode()
     {
-        
+        //Instantiate(explosionParticles, transform.position, transform.rotation);
+        Destroy(gameObject);
+
     }
 }
