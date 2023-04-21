@@ -29,7 +29,7 @@ public class DashBehaviour : Action
         if (DashCdTimer > 0)
             DashCdTimer -= Time.deltaTime;
 
-        if (dashAction.triggered && playerController._jp.GetJetpackActive())
+        if (dashAction.triggered && playerController.GetJetpackActive())
         {
             if (DashCdTimer > 0)
                 return;

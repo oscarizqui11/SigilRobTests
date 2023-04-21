@@ -16,8 +16,8 @@ namespace FSM
 
         public void UpdateState(Controller controller)
         {
-            CheckTransitions(controller);
             DoActions(controller);
+            CheckTransitions(controller);
         }
 
         public void FixedUpdateState(Controller controller)

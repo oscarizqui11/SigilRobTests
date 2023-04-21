@@ -9,12 +9,10 @@ public class DetectCollisionScript : MonoBehaviour
     float stepHeight;
 
     private PlayerController playerController;
-    private JetpackScript jetpackScript;
 
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
-        jetpackScript = GetComponent<JetpackScript>();
     }
 
     private void OnCollisionStay(Collision collision)
@@ -23,8 +21,14 @@ public class DetectCollisionScript : MonoBehaviour
             if (point.point.y <= StepPointY())
             {
                 playerController.playerState = PlayerState.Grounded;
-                jetpackScript.SetDoubleJump(false);
+                playerController.SetJump(false);
             }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (playerController.transform.position.y + playerController._capscol.center.y - playerController._capscol.height / 2 + playerController._capscol.radius * stepHeight - collision.collider.bounds.ClosestPoint(playerController.transform.position + playerController._capscol.center - new Vector3(0, playerController._capscol.height / 2 + playerController._capscol.radius * stepHeight, 0)).y > 0.05f)
+            playerController.playerState = PlayerState.Airborne;
     }
 
     private float StepPointY()

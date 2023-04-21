@@ -26,7 +26,6 @@ public class PlayerController : Controller
     public Rigidbody _rb { get; private set; }
     public CapsuleCollider _capscol { get; private set; }
     public MovementBH _mb { get; private set; }
-    public JetpackScript _jp { get; private set; }
 
     public Renderer rende;
 
@@ -40,6 +39,8 @@ public class PlayerController : Controller
     private bool autoConsum;
 
     private Vector3 movDir;
+    private bool jumpUsed;
+    private bool JetpackActive;
     #endregion
 
     //Events
@@ -59,7 +60,6 @@ public class PlayerController : Controller
         _rb = GetComponent<Rigidbody>();
         _capscol = GetComponent<CapsuleCollider>();
         _mb = GetComponent<MovementBH>();
-        _jp = GetComponent<JetpackScript>();
 
         base.Start();
     }
@@ -71,6 +71,15 @@ public class PlayerController : Controller
     public Vector3 GetDir()
     {
         return movDir;
+    }
+
+    public void SetJump(bool isUsed)
+    {
+        jumpUsed = isUsed;
+    }
+    public bool GetJump()
+    {
+        return jumpUsed;
     }
 
     public void SetAutoCuration(bool cur)
@@ -89,5 +98,14 @@ public class PlayerController : Controller
     public bool GetAutoConsumption()
     {
         return autoConsum;
+    }
+
+    public void SetJetpackActive(bool isJpActive)
+    {
+        JetpackActive = isJpActive;
+    }
+    public bool GetJetpackActive()
+    {
+        return JetpackActive;
     }
 }

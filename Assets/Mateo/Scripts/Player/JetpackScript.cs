@@ -1,27 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JetpackScript : MonoBehaviour
 {
-    private bool JetpackActive;
-    private bool DoubleJumpUsed;
-
-    public void SetJetpackActive(bool isJpActive)
+    public void OnTriggerEnter(Collider other)
     {
-        JetpackActive = isJpActive;
-    }
-    public bool GetJetpackActive()
-    {
-        return JetpackActive;
-    }
-
-    public void SetDoubleJump(bool dj)
-    {
-        DoubleJumpUsed = dj;
-    }
-    public bool GetDoubleJump()
-    {
-        return DoubleJumpUsed;
+        other.GetComponent<PlayerController>().SetJetpackActive(true);
+        gameObject.SetActive(false);
     }
 }

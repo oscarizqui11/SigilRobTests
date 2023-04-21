@@ -9,26 +9,26 @@ public class RoomBotController : Controller
     public Light light_ { private set; get; }
 
     //Movement
-    public int index;
-    public Quaternion lookRotation;
+    [HideInInspector] public int index;
+    [HideInInspector] public Quaternion lookRotation;
 
     //Collision
-    public bool isCollinding;
+    [HideInInspector] public bool isCollinding;
 
-    public float cooldown;
-    public float timer;
+    [HideInInspector] public float cooldown;
+    [HideInInspector] public float timer;
 
-    public bool NotActive;
+    [HideInInspector] public bool NotActive;
     #endregion
 
     #region Interpolation
-    public float totalTime;
-    public float currentTime;
+    [HideInInspector] public float totalTime;
+    [HideInInspector] public float currentTime;
 
-    public bool assignedPoint;
+    [HideInInspector] public bool assignedPoint;
 
-    public Vector3 pointA;
-    public Vector3 pointB;
+    [HideInInspector] public Vector3 pointA;
+    [HideInInspector] public Vector3 pointB;
     #endregion
 
     public override void Start()

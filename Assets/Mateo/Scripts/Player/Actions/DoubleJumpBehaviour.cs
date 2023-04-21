@@ -1,6 +1,5 @@
 using UnityEngine;
 using FSM;
-using SRobEngine.SRobPlayer;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/DoubleJumpBehaviour", fileName = "AcDoubleJumpBehaviour")]
@@ -21,11 +20,11 @@ public class DoubleJumpBehaviour : Action
 
     public override void Act(Controller controller)
     {
-        if (jumpAction.triggered && !playerController._jp.GetDoubleJump() && playerController._jp.GetJetpackActive())
+        if (jumpAction.triggered && playerController.GetJump() && playerController.GetJetpackActive())
         {
-            playerController.battery -= batterySubstraction;Debug.Log(playerController.battery);
-            playerController._jp.SetDoubleJump(true);
-            playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
+            playerController.battery -= batterySubstraction;
+            playerController.SetJump(false);
+            playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);Debug.Log("DJump");
         }
     }
 }
