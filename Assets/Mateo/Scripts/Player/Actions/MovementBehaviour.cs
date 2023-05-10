@@ -1,6 +1,5 @@
 using UnityEngine;
 using FSM;
-using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/MovementBehaviour", fileName = "AcMovementBehaviour")]
 public class MovementBehaviour : Action
@@ -14,9 +13,6 @@ public class MovementBehaviour : Action
 
     public override void Act(Controller controller)
     {
-        Transform transform = playerController.transform;
-
-        playerController._mb.MoveRB(playerController.GetDir().normalized * playerController.GetDir().normalized.magnitude);
-        transform.rotation = Quaternion.LookRotation(playerController.GetDir(), transform.up);
+        playerController._mb.MoveRB(playerController.GetDir().normalized);
     }
 }

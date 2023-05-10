@@ -22,7 +22,7 @@ public class JumpBehaviour : Action
         if(jumpAction.triggered && !playerController.GetJump())
         {
             playerController.SetJump(true);
-            playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
+            playerController._rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 }

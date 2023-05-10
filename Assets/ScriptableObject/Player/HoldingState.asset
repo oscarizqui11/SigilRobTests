@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af61f7f05de087848bb36aa50cd20ead, type: 3}
-  m_Name: GroundedState
+  m_Name: HoldingState
   m_EditorClassIdentifier: 
   updateActions:
   - {fileID: 11400000, guid: a74c7efafe362264fadf067236d5a358, type: 2}
   - {fileID: 11400000, guid: f5376928ddf9ee9469f5fe29f671d096, type: 2}
-  - {fileID: 11400000, guid: e4e0267cf959dd64d9c6d21bbd10527b, type: 2}
   fixedUpdateActions:
+  - {fileID: 11400000, guid: cde197aaf5fc8d44fbfbecea4a74511c, type: 2}
   - {fileID: 11400000, guid: 514edc234c0c1db4ea747321c0790731, type: 2}
-  - {fileID: 11400000, guid: 09553c3283e6f0c468d5fa494df57254, type: 2}
-  - {fileID: 11400000, guid: 1a6d2320b04dda742bda5b2a042fc565, type: 2}
   transitions:
-  - decision: {fileID: 11400000, guid: 58b939a8b53fe7547af564cd348725ab, type: 2}
-    trueState: {fileID: 11400000, guid: 3bdf62519f8245547bf51121bea8f3bd, type: 2}
-  - decision: {fileID: 11400000, guid: fcb016358cd646440a9c38aaf245fb2c, type: 2}
-    trueState: {fileID: 11400000, guid: e8ee4d512da682940bfe028ac73188d1, type: 2}
+  - decision: {fileID: 11400000, guid: 8bf2f9163b36d8a44bf2cc5d42c33159, type: 2}
+    trueState: {fileID: 11400000, guid: f86b7cd7ca20fa242b5c7d9a13ca793f, type: 2}

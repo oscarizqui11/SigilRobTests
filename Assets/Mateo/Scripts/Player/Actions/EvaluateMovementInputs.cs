@@ -2,13 +2,12 @@ using UnityEngine;
 using FSM;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "FSM/Player/Action/EvaluateMovemntInputs", fileName = "EvaluateMovemntInputs")]
+[CreateAssetMenu(menuName = "FSM/Player/Action/EvaluateMovementInputs", fileName = "AcEvaluateMovementInputs")]
 public class EvaluateMovementInputs : Action
 {
     private Vector2 inputDir;
 
-    [SerializeField]
-    private float inputChangeDif;
+    [SerializeField] private float inputChangeDif;
 
     private PlayerController playerController;
 
@@ -31,6 +30,7 @@ public class EvaluateMovementInputs : Action
     public override void Act(Controller controller)
     {
         Vector2 nextInputDir = moveAction.ReadValue<Vector2>();
+        Transform transform = playerController.transform;
 
         if (Mathf.Abs(inputDir.x - nextInputDir.x) > inputChangeDif || Mathf.Abs(inputDir.y - nextInputDir.y) > inputChangeDif)
         {
@@ -41,5 +41,8 @@ public class EvaluateMovementInputs : Action
 
             playerController.SetDir(movDirVer + movDirHor);
         }
+
+        if (playerController.GetDir() != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(playerController.GetDir(), transform.up);
     }    
 }

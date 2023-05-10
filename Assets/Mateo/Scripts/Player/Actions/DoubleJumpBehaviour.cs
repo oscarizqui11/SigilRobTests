@@ -1,5 +1,6 @@
 using UnityEngine;
 using FSM;
+using SRobEngine.SRobPlayer;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "FSM/Player/Action/DoubleJumpBehaviour", fileName = "AcDoubleJumpBehaviour")]
@@ -24,7 +25,7 @@ public class DoubleJumpBehaviour : Action
         {
             playerController.battery -= batterySubstraction;
             playerController.SetJump(false);
-            playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);Debug.Log("DJump");
+            playerController._rb.AddForce(playerController.transform.up * jumpForce, ForceMode.Impulse);
         }
     }
 }

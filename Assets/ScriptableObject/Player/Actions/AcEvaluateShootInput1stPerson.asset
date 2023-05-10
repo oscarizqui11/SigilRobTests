@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f2b5cc147bf4f4fa9f61f0805a6e18, type: 3}
+  m_Name: AcEvaluateShootInput1stPerson
+  m_EditorClassIdentifier: 
+  shootingAction:
+    m_Name: Shooting
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 70999422-9977-4f79-ae71-9efcf3196b4a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: aa5379e2-7ad4-47b6-816a-5e3cfcf12955
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting
+      m_Flags: 0
+    - m_Name: 
+      m_Id: df608106-235e-4300-8845-7e0801ce9fe0
+      m_Path: <XInputController>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting
+      m_Flags: 0
+    m_Flags: 0
+  cadency: 0.6
+  bulletName: TaserRanged
+  gunPosition: {x: 0, y: 0.05, z: 0.5}
+  energyCost: 15
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []

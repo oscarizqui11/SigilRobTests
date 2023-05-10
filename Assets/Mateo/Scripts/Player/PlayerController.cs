@@ -10,7 +10,6 @@ namespace SRobEngine
         {
             Grounded,
             Airborne,
-            Ramming,
             Shooting,
             Holding,
             Healing,
@@ -33,6 +32,8 @@ public class PlayerController : Controller
 
     public float battery;
 
+    public Transform objectDraggable;
+
     [SerializeField]
     private bool curation;
     [SerializeField]
@@ -40,12 +41,9 @@ public class PlayerController : Controller
 
     private Vector3 movDir;
     private bool jumpUsed;
+    private bool isShooting;
     private bool JetpackActive;
     #endregion
-
-    //Events
-    [HideInInspector] public bool hasReceivedEvent = true;
-    [HideInInspector] public Event receivedEvent;
 
     private void Awake()
     {
@@ -98,6 +96,15 @@ public class PlayerController : Controller
     public bool GetAutoConsumption()
     {
         return autoConsum;
+    }
+
+    public void SetShootingActive(bool isShoot)
+    {
+        isShooting = isShoot;
+    }
+    public bool GetShootingActive()
+    {
+        return isShooting;
     }
 
     public void SetJetpackActive(bool isJpActive)

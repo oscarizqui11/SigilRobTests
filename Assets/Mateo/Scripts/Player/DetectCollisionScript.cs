@@ -18,7 +18,7 @@ public class DetectCollisionScript : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         foreach (ContactPoint point in collision.contacts)
-            if (point.point.y <= StepPointY())
+            if (point.point.y <= StepPointY() && playerController.playerState != PlayerState.FirstPerson && playerController.playerState != PlayerState.Holding)
             {
                 playerController.playerState = PlayerState.Grounded;
                 playerController.SetJump(false);

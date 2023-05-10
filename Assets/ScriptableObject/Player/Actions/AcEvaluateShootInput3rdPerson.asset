@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66507798d3640f4479780f81492eb466, type: 3}
+  m_Name: AcEvaluateShootInput3rdPerson
+  m_EditorClassIdentifier: 
+  shootingAction:
+    m_Name: Shooting
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b27eb778-153f-4d35-ac64-057fc86c07a9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e9e0eecf-ec48-420f-9354-00d1656a59bd
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 13dd3406-eaae-4050-bde4-da741d4a2ce8
+      m_Path: <XInputController>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting
+      m_Flags: 0
+    m_Flags: 0
+  cadency: 0.6
+  bulletName: TaserMelee
+  gunPosition: {x: 0, y: 0.05, z: 0.5}
+  energyCost: 15
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
