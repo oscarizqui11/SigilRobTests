@@ -8,6 +8,7 @@ public class Cambot : MonoBehaviour
     public bool persecution;
     public float maxDistance;
     public GameObject cone;
+    public GameObject light;
     public Vector3 defaultRotation;
     private Vector3 direction;
     private Vector3 defaultPosition;
@@ -15,6 +16,7 @@ public class Cambot : MonoBehaviour
     private MovementBH mv;
     public float backTime;
     private float time;
+    [SerializeField] private LayerMask raycastIgnoreLayers;
 
     void Start()
     {
@@ -24,16 +26,14 @@ public class Cambot : MonoBehaviour
 
     private void FixedUpdate()
     {
+        direction = target.position - transform.position;
         DP = defaultPosition - transform.position;
 
         if (persecution)
         {
-            direction = target.position - transform.position;
             time = 0;
             RaycastHit hit;
-            int layerMask = LayerMask.GetMask("Ignore Raycast");
-
-            if (Physics.Raycast(transform.position, direction.normalized, out hit, maxDistance, ~layerMask))
+            if (Physics.Raycast(transform.position, direction.normalized, out hit, maxDistance, raycastIgnoreLayers))
             {
                 if (hit.collider.CompareTag("Player"))
                 {
@@ -64,6 +64,7 @@ public class Cambot : MonoBehaviour
     private void Follow()
     {
         cone.SetActive(false);
+        light.SetActive(false);
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         mv.MoveRB(direction.normalized);
     }
@@ -76,6 +77,7 @@ public class Cambot : MonoBehaviour
     public void CambotReset()
     {
         cone.SetActive(true);
+        light.SetActive(true);
         transform.position = defaultPosition;
         transform.LookAt(cone.transform);
     }

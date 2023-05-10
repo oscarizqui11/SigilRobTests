@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636769113743871629}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.047633193, y: -1.451, z: -2.86}
-  m_LocalScale: {x: 3, y: 10, z: 0.7499998}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 5.927632, y: 0.52021664, z: 3.3883622}
+  m_LocalScale: {x: 3, y: 8.602202, z: 6.3687453}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2258011930664166942}
+  m_Father: {fileID: 1287697098422637142}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &636769113743871631
@@ -44,9 +44,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 500
-  m_Range: 12
-  m_SpotAngle: 18.7
+  m_Intensity: 300
+  m_Range: 6.952413
+  m_SpotAngle: 16.61176
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -83,7 +83,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 6.93
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1394205884404293927}
   - component: {fileID: 7471863799810803514}
   - component: {fileID: 7471863799810803509}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,15 +121,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919445189711531290}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.88, y: 1.5, z: -2.362897}
-  m_LocalScale: {x: 1, y: 4, z: 0.30000004}
+  m_LocalRotation: {x: -0.601137, y: -0, z: -0, w: 0.79914606}
+  m_LocalPosition: {x: 5.8800015, y: -2.1, z: -9.54}
+  m_LocalScale: {x: 1, y: 8.491661, z: 5.311764}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 636769113743871628}
+  m_Children: []
   m_Father: {fileID: 1287697098422637142}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -73.903, y: 0, z: 0}
 --- !u!33 &4421704422998182366
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -158,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0cba287ab50e47543a393602e2048788, type: 2}
+  - {fileID: 2100000, guid: 2d2090c2f45a02e41bef4b8b128009c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,8 +250,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 4.59
+  m_Center: {x: 0, y: 0, z: 3.14}
 --- !u!114 &1287697097474492554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +309,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1.6500547, z: 0.1}
-  m_Center: {x: 0.012014389, y: -0.32502794, z: -0.031072736}
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0.01201439, y: -0.9889704, z: -0.031072738}
 --- !u!114 &1287697097522863778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,15 +349,16 @@ Transform:
   m_GameObject: {fileID: 1287697098422637143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31535324, y: 0.31535324, z: 0.31535324}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8870486091898681441}
   - {fileID: 1287697097522863779}
   - {fileID: 1287697097474492555}
+  - {fileID: 636769113743871628}
   - {fileID: 2258011930664166942}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3905694252498000404
 GameObject:
@@ -468,8 +468,12 @@ MonoBehaviour:
   persecution: 0
   maxDistance: 10
   cone: {fileID: 919445189711531290}
+  light: {fileID: 636769113743871629}
   defaultRotation: {x: 0, y: 180, z: 0}
   backTime: 2
+  raycastIgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!114 &7247372791705792420
 MonoBehaviour:
   m_ObjectHideFlags: 0
